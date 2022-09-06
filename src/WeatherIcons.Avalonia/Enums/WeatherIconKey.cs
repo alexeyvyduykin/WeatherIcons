@@ -186,8 +186,6 @@
         Sunrise,
         Sunset,
         Thermometer,
-        ThermometerExterior,
-        ThermometerInternal,
         Thunderstorm,
         Time1,
         Time2,

@@ -44,6 +44,9 @@
 								<Path Fill="{TemplateBinding Tertiary}"
 									  Data="{Binding Data3, RelativeSource={RelativeSource TemplatedParent}}"
 									  Stretch="Uniform" />
+								<Path Fill="{TemplateBinding Quaternary}"
+									  Data="{Binding Data4, RelativeSource={RelativeSource TemplatedParent}}"
+									  Stretch="Uniform" />
 							</Grid>
 						</Viewbox>
 					</Border>

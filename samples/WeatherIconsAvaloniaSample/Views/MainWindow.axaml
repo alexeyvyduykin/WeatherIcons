@@ -93,10 +93,10 @@
 			</Style>
 		</StackPanel.Styles>
 
-		<Expander Header="Daytime" IsExpanded="False">
+		<Expander Header="Daytime" IsExpanded="True">
 			<WrapPanel>
 				<wi:WeatherIcon Key="DaySunny"/>
-				<wi:WeatherIcon Key="DayCloudy"/>
+				<wi:WeatherIcon Key="DayCloudy" Primary="White" Secondary="Yellow"/>
 				<wi:WeatherIcon Key="DayCloudyGusts"/>
 				<wi:WeatherIcon Key="DayCloudyWindy"/>
 				<wi:WeatherIcon Key="DayFog"/>
@@ -226,24 +226,24 @@
 			</WrapPanel>
 		</Expander>
 		
-		<Expander Header="Miscellaneous" IsExpanded="False">
+		<Expander Header="Miscellaneous" IsExpanded="True">
 			<WrapPanel>
 				<wi:WeatherIcon Key="Alien"/>
 				<wi:WeatherIcon Key="Celsius"/>
 				<wi:WeatherIcon Key="Fahrenheit"/>
 				<wi:WeatherIcon Key="Degrees"/>
-				<wi:WeatherIcon Key="Thermometer"/>
-				<wi:WeatherIcon Key="ThermometerExterior"/>
-				<wi:WeatherIcon Key="ThermometerInternal"/>
-				<wi:WeatherIcon Key="CloudDown"/>
-				<wi:WeatherIcon Key="CloudUp"/>
-				<wi:WeatherIcon Key="CloudRefresh"/>
-				<wi:WeatherIcon Key="Horizon"/>
-				<wi:WeatherIcon Key="HorizonAlt"/>
-				<wi:WeatherIcon Key="Sunrise"/>
-				<wi:WeatherIcon Key="Sunset"/>
-				<wi:WeatherIcon Key="Moonrise"/>
-				<wi:WeatherIcon Key="Moonset"/>
+				<wi:WeatherIcon Key="Thermometer" Primary="Red" Secondary="White"/>
+				<wi:WeatherIcon Key="Thermometer" Primary="Transparent" Secondary="White"/>
+				<wi:WeatherIcon Key="Thermometer" Primary="Red" Secondary="Transparent"/>
+				<wi:WeatherIcon Key="CloudDown" Primary="White" Secondary="Orange"/>
+				<wi:WeatherIcon Key="CloudUp" Primary="White" Secondary="Orange"/>
+				<wi:WeatherIcon Key="CloudRefresh" Primary="White" Secondary="Orange"/>
+				<wi:WeatherIcon Key="Horizon" Primary="Yellow" Secondary="Orange"/>
+				<wi:WeatherIcon Key="HorizonAlt" Primary="Yellow" Secondary="Orange"/>
+				<wi:WeatherIcon Key="Sunrise" Primary="Yellow" Secondary="Orange"/>
+				<wi:WeatherIcon Key="Sunset" Primary="Yellow" Secondary="Orange"/>
+				<wi:WeatherIcon Key="Moonrise" Primary="Violet" Secondary="LightSeaGreen"/>
+				<wi:WeatherIcon Key="Moonset" Primary="Violet" Secondary="LightSeaGreen"/>
 				<wi:WeatherIcon Key="Refresh"/>
 				<wi:WeatherIcon Key="RefreshAlt"/>
 				<wi:WeatherIcon Key="Umbrella"/>

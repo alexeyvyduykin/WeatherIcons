@@ -12,6 +12,7 @@ namespace WeatherIcons.Avalonia
         private Geometry? _data1;
         private Geometry? _data2;
         private Geometry? _data3;
+        private Geometry? _data4;
 
         public static readonly AvaloniaProperty<Geometry?> DataProperty1 =
             AvaloniaProperty.RegisterDirect<WeatherIcon, Geometry?>(nameof(Data1), icon => icon.Data1);
@@ -38,6 +39,15 @@ namespace WeatherIcons.Avalonia
         {
             get => _data3;
             private set => SetAndRaise(DataProperty3, ref _data3, value);
+        }
+
+        public static readonly AvaloniaProperty<Geometry?> DataProperty4 =
+            AvaloniaProperty.RegisterDirect<WeatherIcon, Geometry?>(nameof(Data4), icon => icon.Data4);
+
+        public Geometry? Data4
+        {
+            get => _data4;
+            private set => SetAndRaise(DataProperty4, ref _data4, value);
         }
 
         public static readonly AvaloniaProperty<WeatherIconKey> KeyProperty =
@@ -76,6 +86,15 @@ namespace WeatherIcons.Avalonia
             set { SetValue(TertiaryProperty, value); }
         }
 
+        public static readonly StyledProperty<IBrush?> QuaternaryProperty =
+            AvaloniaProperty.Register<Shape, IBrush?>(nameof(Quaternary), defaultValue: null);
+
+        public IBrush? Quaternary
+        {
+            get { return GetValue(QuaternaryProperty); }
+            set { SetValue(QuaternaryProperty, value); }
+        }
+        
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
@@ -89,10 +108,12 @@ namespace WeatherIcons.Avalonia
             Data1 = list[0];
             Data2 = list[1];
             Data3 = list[2];
+            Data4 = list[3];
 
             Primary ??= Foreground;
             Secondary ??= Primary;
             Tertiary ??= Secondary;
+            Quaternary ??= Tertiary;
         }
     }
 }

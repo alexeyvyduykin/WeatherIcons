@@ -6,6 +6,8 @@
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceInclude Source="/Themes/DefaultTheme.xaml"/>
 				<ResourceInclude Source="/Icons/WeatherResourceDictionary.xaml"/>
+				<ResourceInclude Source="/Icons/MiscellaneousResourceDictionary.xaml"/>
+				<ResourceInclude Source="/Icons/MoonPhasesResourceDictionary.xaml"/>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>
