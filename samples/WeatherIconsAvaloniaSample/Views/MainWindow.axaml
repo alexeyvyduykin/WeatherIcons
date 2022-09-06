@@ -1,0 +1,399 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:WeatherIconsAvaloniaSample.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:wi="using:WeatherIcons.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="550"
+        x:Class="WeatherIconsAvaloniaSample.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="WeatherIconsAvaloniaSample">
+
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+
+	<Window.Styles>
+		<Style Selector="wi|WeatherIcon.t1">
+	
+			<Setter Property="Width" Value="50"></Setter>
+			<Setter Property="Height" Value="50"></Setter>
+			<Setter Property="Primary" Value="Bisque"></Setter>
+			<Setter Property="Secondary" Value="Green"></Setter>
+			<Setter Property="Tertiary" Value="Blue"></Setter>
+		</Style>
+						
+		<Style Selector="wi|WeatherIcon.towards-23-deg /template/ Path">
+			<Setter Property="RenderTransform">
+				<Setter.Value>
+					<RotateTransform Angle="23"/>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style Selector="wi|WeatherIcon.towards-45-deg /template/ Path">
+			<Setter Property="RenderTransform">
+				<Setter.Value>
+					<RotateTransform Angle="45"/>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style Selector="wi|ThemedWeatherIcon.t3">
+			<Setter Property="CloudColor" Value="Gold"></Setter>
+		</Style>
+
+		<Style Selector="wi|ThemedWeatherIcon.t4">
+			<Setter Property="CloudColor" Value="DeepPink"></Setter>
+		</Style>
+
+		<Style Selector="wi|WindDirectionIcon">		
+			<Setter Property="Primary" Value="Red"/>
+			<Setter Property="Secondary" Value="Orange"/>
+		</Style>
+
+	</Window.Styles>
+
+	<StackPanel>
+
+		<StackPanel.Styles>
+			<Style Selector="Border">
+				<Setter Property="Background" Value="#373737"></Setter>
+			</Style>
+			<Style Selector="Viewbox">
+				<Setter Property="Width" Value="56"></Setter>
+				<Setter Property="Height" Value="56"></Setter>
+			</Style>
+			<Style Selector="Path">
+				<Setter Property="Stretch" Value="Uniform"></Setter>
+				<Setter Property="Fill" Value="White"></Setter>
+			</Style>
+			<Style Selector="ItemsControl">
+				<Setter Property="ItemsPanel">
+					<Setter.Value>
+						<ItemsPanelTemplate>
+							<Grid/>
+						</ItemsPanelTemplate>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="Template">
+					<ControlTemplate>
+						<Border>
+							<Viewbox>
+								<Grid>
+									<ItemsPresenter Name="PART_ItemsPresenter"
+													Items="{TemplateBinding Items}"
+													ItemsPanel="{TemplateBinding ItemsPanel}"
+													ItemTemplate="{TemplateBinding ItemTemplate}"/>
+								</Grid>
+							</Viewbox>
+						</Border>
+					</ControlTemplate>
+				</Setter>
+			</Style>
+		</StackPanel.Styles>
+
+		<Expander Header="Daytime" IsExpanded="False">
+			<WrapPanel>
+				<wi:WeatherIcon Key="DaySunny"/>
+				<wi:WeatherIcon Key="DayCloudy"/>
+				<wi:WeatherIcon Key="DayCloudyGusts"/>
+				<wi:WeatherIcon Key="DayCloudyWindy"/>
+				<wi:WeatherIcon Key="DayFog"/>
+				<wi:WeatherIcon Key="DayHail"/>
+				<wi:WeatherIcon Key="DayHaze"/>
+				<wi:WeatherIcon Key="DayLightning"/>
+				<wi:WeatherIcon Key="DayRain"/>
+				<wi:WeatherIcon Key="DayRainMix"/>
+				<wi:WeatherIcon Key="DayRainWind"/>
+				<wi:WeatherIcon Key="DayShowers"/>
+				<wi:WeatherIcon Key="DaySleet"/>
+				<wi:WeatherIcon Key="DaySleetStorm"/>
+				<wi:WeatherIcon Key="DaySnow"/>
+				<wi:WeatherIcon Key="DaySnowThunderstorm"/>
+				<wi:WeatherIcon Key="DaySnowWind"/>
+				<wi:WeatherIcon Key="DaySprinkle"/>
+				<wi:WeatherIcon Key="DayStormShowers"/>
+				<wi:WeatherIcon Key="DaySunnyOvercast"/>
+				<wi:WeatherIcon Key="DayThunderstorm"/>
+				<wi:WeatherIcon Key="DayWindy"/>
+				<wi:WeatherIcon Key="DayCloudyHigh"/>
+				<wi:WeatherIcon Key="DayLightWind"/>
+			</WrapPanel>
+		</Expander>
+
+		<Expander Header="Nighttime" IsExpanded="False">
+			<StackPanel>
+				<WrapPanel>
+					<wi:WeatherIcon Key="NightClear"/>
+					<wi:WeatherIcon Key="NightFog"/>
+				</WrapPanel>
+				<WrapPanel>
+					<wi:WeatherIcon Key="NightAltCloudy"/>
+					<wi:WeatherIcon Key="NightAltCloudyGusts"/>
+					<wi:WeatherIcon Key="NightAltCloudyWindy"/>
+					<wi:WeatherIcon Key="NightAltHail"/>
+					<wi:WeatherIcon Key="NightAltLightning"/>
+					<wi:WeatherIcon Key="NightAltRain"/>
+					<wi:WeatherIcon Key="NightAltRainMix"/>
+					<wi:WeatherIcon Key="NightAltRainWind"/>
+					<wi:WeatherIcon Key="NightAltShowers"/>
+					<wi:WeatherIcon Key="NightAltSleet"/>
+					<wi:WeatherIcon Key="NightAltSleetStorm"/>
+					<wi:WeatherIcon Key="NightAltSnow"/>
+					<wi:WeatherIcon Key="NightAltSnowThunderstorm"/>
+					<wi:WeatherIcon Key="NightAltSnowWind"/>
+					<wi:WeatherIcon Key="NightAltSprinkle"/>
+					<wi:WeatherIcon Key="NightAltStormShowers"/>
+					<wi:WeatherIcon Key="NightAltThunderstorm"/>
+					<wi:WeatherIcon Key="NightAltCloudyHigh"/>
+					<wi:WeatherIcon Key="NightAltPartlyCloudy"/>
+				</WrapPanel>
+				<WrapPanel>
+					<wi:WeatherIcon Key="NightCloudy"/>
+					<wi:WeatherIcon Key="NightCloudyGusts"/>
+					<wi:WeatherIcon Key="NightCloudyWindy"/>
+					<wi:WeatherIcon Key="NightHail"/>
+					<wi:WeatherIcon Key="NightLightning"/>
+					<wi:WeatherIcon Key="NightRain"/>
+					<wi:WeatherIcon Key="NightRainMix"/>
+					<wi:WeatherIcon Key="NightRainWind"/>
+					<wi:WeatherIcon Key="NightShowers"/>
+					<wi:WeatherIcon Key="NightSleet"/>
+					<wi:WeatherIcon Key="NightSleetStorm"/>
+					<wi:WeatherIcon Key="NightSnow"/>
+					<wi:WeatherIcon Key="NightSnowThunderstorm"/>
+					<wi:WeatherIcon Key="NightSnowWind"/>
+					<wi:WeatherIcon Key="NightSprinkle"/>
+					<wi:WeatherIcon Key="NightStormShowers"/>
+					<wi:WeatherIcon Key="NightThunderstorm"/>
+					<wi:WeatherIcon Key="NightCloudyHigh"/>
+					<wi:WeatherIcon Key="NightPartlyCloudy"/>
+				</WrapPanel>
+			</StackPanel>
+		</Expander>
+
+		<Expander Header="Neutral" IsExpanded="False">
+			<WrapPanel>
+				<wi:WeatherIcon Key="Cloud"/>
+				<wi:WeatherIcon Key="Cloudy"/>
+				<wi:WeatherIcon Key="CloudyGusts"/>
+				<wi:WeatherIcon Key="CloudyWindy"/>
+				<wi:WeatherIcon Key="Fog"/>
+				<wi:WeatherIcon Key="Hail"/>
+				<wi:WeatherIcon Key="Rain"/>
+				<wi:WeatherIcon Key="RainMix"/>
+				<wi:WeatherIcon Key="RainWind"/>
+				<wi:WeatherIcon Key="Showers"/>
+				<wi:WeatherIcon Key="Sleet"/>
+				<wi:WeatherIcon Key="Snow"/>
+				<wi:WeatherIcon Key="Sprinkle"/>
+				<wi:WeatherIcon Key="StormShowers"/>
+				<wi:WeatherIcon Key="Thunderstorm"/>
+				<wi:WeatherIcon Key="SnowWind"/>
+				<wi:WeatherIcon Key="Snow"/>
+			</WrapPanel>
+		</Expander>
+
+		<Expander Header="Others" IsExpanded="False">
+			<WrapPanel>
+				<wi:WeatherIcon Key="SolarEclipse"/>
+				<wi:WeatherIcon Key="Hot"/>
+				<wi:WeatherIcon Key="LunarEclipse"/>
+				<wi:WeatherIcon Key="Stars"/>
+				<wi:WeatherIcon Key="Lightning"/>
+				<wi:WeatherIcon Key="Raindrops"/>
+				<wi:WeatherIcon Key="Raindrop"/>
+				<wi:WeatherIcon Key="SnowflakeCold"/>
+				<wi:WeatherIcon Key="Smog"/>
+				<wi:WeatherIcon Key="Smoke"/>
+				<wi:WeatherIcon Key="Dust"/>
+				<wi:WeatherIcon Key="Windy"/>
+				<wi:WeatherIcon Key="StrongWind"/>
+				<wi:WeatherIcon Key="Sandstorm"/>
+				<wi:WeatherIcon Key="Earthquake"/>
+				<wi:WeatherIcon Key="Fire"/>
+				<wi:WeatherIcon Key="Flood"/>
+				<wi:WeatherIcon Key="Meteor"/>
+				<wi:WeatherIcon Key="Tsunami"/>
+				<wi:WeatherIcon Key="Volcano"/>
+				<wi:WeatherIcon Key="Hurricane"/>
+				<wi:WeatherIcon Key="Tornado"/>
+				<wi:WeatherIcon Key="SmallCraftAdvisory"/>
+				<wi:WeatherIcon Key="GaleWarning"/>
+				<wi:WeatherIcon Key="StormWarning"/>
+				<wi:WeatherIcon Key="HurricaneWarning"/>			
+			</WrapPanel>
+		</Expander>
+		
+		<Expander Header="Miscellaneous" IsExpanded="False">
+			<WrapPanel>
+				<wi:WeatherIcon Key="Alien"/>
+				<wi:WeatherIcon Key="Celsius"/>
+				<wi:WeatherIcon Key="Fahrenheit"/>
+				<wi:WeatherIcon Key="Degrees"/>
+				<wi:WeatherIcon Key="Thermometer"/>
+				<wi:WeatherIcon Key="ThermometerExterior"/>
+				<wi:WeatherIcon Key="ThermometerInternal"/>
+				<wi:WeatherIcon Key="CloudDown"/>
+				<wi:WeatherIcon Key="CloudUp"/>
+				<wi:WeatherIcon Key="CloudRefresh"/>
+				<wi:WeatherIcon Key="Horizon"/>
+				<wi:WeatherIcon Key="HorizonAlt"/>
+				<wi:WeatherIcon Key="Sunrise"/>
+				<wi:WeatherIcon Key="Sunset"/>
+				<wi:WeatherIcon Key="Moonrise"/>
+				<wi:WeatherIcon Key="Moonset"/>
+				<wi:WeatherIcon Key="Refresh"/>
+				<wi:WeatherIcon Key="RefreshAlt"/>
+				<wi:WeatherIcon Key="Umbrella"/>
+				<wi:WeatherIcon Key="Barometer"/>
+				<wi:WeatherIcon Key="Humidity"/>
+				<wi:WeatherIcon Key="Na"/>
+				<wi:WeatherIcon Key="Train"/>
+			</WrapPanel>
+		</Expander>
+
+		<Expander Header="Moon Phases" IsExpanded="False">
+			<StackPanel>
+				<WrapPanel>
+					<wi:WeatherIcon Key="MoonNew"/>
+					<wi:WeatherIcon Key="MoonWaxingCrescent1"/>
+					<wi:WeatherIcon Key="MoonWaxingCrescent2"/>
+					<wi:WeatherIcon Key="MoonWaxingCrescent3"/>
+					<wi:WeatherIcon Key="MoonWaxingCrescent4"/>
+					<wi:WeatherIcon Key="MoonWaxingCrescent5"/>
+					<wi:WeatherIcon Key="MoonWaxingCrescent6"/>
+					<wi:WeatherIcon Key="MoonFirstQuarter"/>
+					<wi:WeatherIcon Key="MoonWaxingGibbous1"/>
+					<wi:WeatherIcon Key="MoonWaxingGibbous2"/>
+					<wi:WeatherIcon Key="MoonWaxingGibbous3"/>
+					<wi:WeatherIcon Key="MoonWaxingGibbous4"/>
+					<wi:WeatherIcon Key="MoonWaxingGibbous5"/>
+					<wi:WeatherIcon Key="MoonWaxingGibbous6"/>
+					<wi:WeatherIcon Key="MoonFull"/>
+					<wi:WeatherIcon Key="MoonWaningGibbous1"/>
+					<wi:WeatherIcon Key="MoonWaningGibbous2"/>
+					<wi:WeatherIcon Key="MoonWaningGibbous3"/>
+					<wi:WeatherIcon Key="MoonWaningGibbous4"/>
+					<wi:WeatherIcon Key="MoonWaningGibbous5"/>
+					<wi:WeatherIcon Key="MoonWaningGibbous6"/>
+					<wi:WeatherIcon Key="MoonThirdQuarter"/>
+					<wi:WeatherIcon Key="MoonWaningCrescent1"/>
+					<wi:WeatherIcon Key="MoonWaningCrescent2"/>
+					<wi:WeatherIcon Key="MoonWaningCrescent3"/>
+					<wi:WeatherIcon Key="MoonWaningCrescent4"/>
+					<wi:WeatherIcon Key="MoonWaningCrescent5"/>
+					<wi:WeatherIcon Key="MoonWaningCrescent6"/>
+				</WrapPanel>
+				<WrapPanel>
+					<wi:WeatherIcon Key="MoonAltNew"/>
+					<wi:WeatherIcon Key="MoonAltWaxingCrescent1"/>
+					<wi:WeatherIcon Key="MoonAltWaxingCrescent2"/>
+					<wi:WeatherIcon Key="MoonAltWaxingCrescent3"/>
+					<wi:WeatherIcon Key="MoonAltWaxingCrescent4"/>
+					<wi:WeatherIcon Key="MoonAltWaxingCrescent5"/>
+					<wi:WeatherIcon Key="MoonAltWaxingCrescent6"/>
+					<wi:WeatherIcon Key="MoonAltFirstQuarter"/>
+					<wi:WeatherIcon Key="MoonAltWaxingGibbous1"/>
+					<wi:WeatherIcon Key="MoonAltWaxingGibbous2"/>
+					<wi:WeatherIcon Key="MoonAltWaxingGibbous3"/>
+					<wi:WeatherIcon Key="MoonAltWaxingGibbous4"/>
+					<wi:WeatherIcon Key="MoonAltWaxingGibbous5"/>
+					<wi:WeatherIcon Key="MoonAltWaxingGibbous6"/>
+					<wi:WeatherIcon Key="MoonAltFull"/>
+					<wi:WeatherIcon Key="MoonAltWaningGibbous1"/>
+					<wi:WeatherIcon Key="MoonAltWaningGibbous2"/>
+					<wi:WeatherIcon Key="MoonAltWaningGibbous3"/>
+					<wi:WeatherIcon Key="MoonAltWaningGibbous4"/>
+					<wi:WeatherIcon Key="MoonAltWaningGibbous5"/>
+					<wi:WeatherIcon Key="MoonAltWaningGibbous6"/>
+					<wi:WeatherIcon Key="MoonAltThirdQuarter"/>
+					<wi:WeatherIcon Key="MoonAltWaningCrescent1"/>
+					<wi:WeatherIcon Key="MoonAltWaningCrescent2"/>
+					<wi:WeatherIcon Key="MoonAltWaningCrescent3"/>
+					<wi:WeatherIcon Key="MoonAltWaningCrescent4"/>
+					<wi:WeatherIcon Key="MoonAltWaningCrescent5"/>
+					<wi:WeatherIcon Key="MoonAltWaningCrescent6"/>		
+			</WrapPanel>
+			</StackPanel>
+		</Expander>
+
+		<Expander Header="Time" IsExpanded="False">
+			<WrapPanel>
+				<wi:WeatherIcon Key="Time1"/>
+				<wi:WeatherIcon Key="Time2"/>
+				<wi:WeatherIcon Key="Time3"/>
+				<wi:WeatherIcon Key="Time4"/>
+				<wi:WeatherIcon Key="Time5"/>
+				<wi:WeatherIcon Key="Time6"/>
+				<wi:WeatherIcon Key="Time7"/>
+				<wi:WeatherIcon Key="Time8"/>
+				<wi:WeatherIcon Key="Time9"/>
+				<wi:WeatherIcon Key="Time10"/>
+				<wi:WeatherIcon Key="Time11"/>
+				<wi:WeatherIcon Key="Time12"/>
+			</WrapPanel>
+		</Expander>
+
+		<Expander Header="Directional Arrows" IsExpanded="False">
+			<WrapPanel>
+				<wi:WeatherIcon Key="DirectionUp"/>
+				<wi:WeatherIcon Key="DirectionUpRight"/>
+				<wi:WeatherIcon Key="DirectionRight"/>
+				<wi:WeatherIcon Key="DirectionDownRight"/>
+				<wi:WeatherIcon Key="DirectionDown"/>
+				<wi:WeatherIcon Key="DirectionDownLeft"/>
+				<wi:WeatherIcon Key="DirectionLeft"/>
+				<wi:WeatherIcon Key="DirectionUpLeft"/>			
+			</WrapPanel>
+		</Expander>
+
+		<Expander Header="Wind" IsExpanded="False">
+			<StackPanel>
+				<WrapPanel>
+					<wi:WeatherIcon Key="WindDeg"/>
+					<wi:WeatherIcon Key="WindDeg" Classes="towards-23-deg"/>
+					<wi:WeatherIcon Key="WindDeg" Classes="towards-45-deg"/>
+				</WrapPanel>
+				<WrapPanel>
+					<wi:WindDirectionIcon/>
+					<wi:WindDirectionIcon Angle="23"/>
+					<wi:WindDirectionIcon Angle="45"/>
+					<wi:WindDirectionIcon Angle="248"/>
+				</WrapPanel>
+				<WrapPanel>
+					<wi:WindDirectionIcon Direction="From"/>
+					<wi:WindDirectionIcon Direction="From" Angle="23"/>
+					<wi:WindDirectionIcon Direction="From" Angle="45"/>
+					<wi:WindDirectionIcon Direction="From" Angle="248"/>
+				</WrapPanel>
+				<WrapPanel>
+					<wi:WindDirectionIcon CardinalDirection="n"/>
+					<wi:WindDirectionIcon CardinalDirection="nne" Angle="180"/>
+					<wi:WindDirectionIcon CardinalDirection="ne" Angle="180"/>
+					<wi:WindDirectionIcon CardinalDirection="wsw" Direction="From" Angle="180"/>
+				</WrapPanel>
+			</StackPanel>
+		</Expander>
+
+		<Expander Header="Beaufort Wind Scale" IsExpanded="False">
+			<WrapPanel>
+				<wi:WeatherIcon Key="WindBeaufort0"/>
+				<wi:WeatherIcon Key="WindBeaufort1"/>
+				<wi:WeatherIcon Key="WindBeaufort2"/>
+				<wi:WeatherIcon Key="WindBeaufort3"/>
+				<wi:WeatherIcon Key="WindBeaufort4"/>
+				<wi:WeatherIcon Key="WindBeaufort5"/>
+				<wi:WeatherIcon Key="WindBeaufort6"/>
+				<wi:WeatherIcon Key="WindBeaufort7"/>
+				<wi:WeatherIcon Key="WindBeaufort8"/>
+				<wi:WeatherIcon Key="WindBeaufort9"/>
+				<wi:WeatherIcon Key="WindBeaufort10"/>
+				<wi:WeatherIcon Key="WindBeaufort11"/>
+				<wi:WeatherIcon Key="WindBeaufort12"/>					
+			</WrapPanel>
+		</Expander>
+
+	</StackPanel>
+</Window>

@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<SolidColorBrush x:Key="WeatherCloudColor" Color="White"/>
+	<SolidColorBrush x:Key="WeatherSunColor" Color="Yellow"/>
+	<SolidColorBrush x:Key="WeatherMoonColor" Color="Violet"/>
+	<SolidColorBrush x:Key="WeatherRainColor" Color="LightSeaGreen"/>
+	<SolidColorBrush x:Key="WeatherHailColor" Color="LightSeaGreen"/>
+	<SolidColorBrush x:Key="WeatherSnowColor" Color="LightBlue"/>
+	<SolidColorBrush x:Key="WeatherFogColor" Color="LightBlue"/>
+
+</ResourceDictionary>

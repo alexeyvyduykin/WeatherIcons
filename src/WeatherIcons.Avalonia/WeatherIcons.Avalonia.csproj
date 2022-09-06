@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>9</LangVersion>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Title>WeatherIcons.Avalonia</Title>
+		<RepositoryUrl>https://github.com/alexeyvyduykin/WeatherIcons</RepositoryUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Update="**\*.xaml.cs">
+			<DependentUpon>%(Filename)</DependentUpon>
+		</Compile>
+		<AvaloniaResource Include="**\*.xaml">
+			<SubType>Designer</SubType>
+		</AvaloniaResource>
+		
+		<AvaloniaResource Include="Icons\WeatherResourceDictionary.xaml" />
+		<AvaloniaResource Include="Themes\DefaultTheme.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="11.0.0-preview1" />
+	</ItemGroup>
+
+</Project>

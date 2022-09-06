@@ -1,0 +1,64 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:vm="clr-namespace:WeatherIcons.Avalonia.ViewModels"
+		xmlns:local="clr-namespace:WeatherIcons.Avalonia">
+
+	<Design.PreviewWith>
+		<Border Padding="20" Width="280">
+			<StackPanel>
+				<WrapPanel>
+
+					<local:ThemedWeatherIcon Background="#373737"	
+											  Key="WeatherDayRain"/>
+
+					<local:ThemedWeatherIcon Background="#373737"
+											  Key="WeatherDrizzle"/>
+
+					<local:ThemedWeatherIcon Background="#373737"
+											  Key="WeatherNightSnow"/>
+				</WrapPanel>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<Styles.Resources>
+		<DataTemplate x:Key="PathItemTemplate" DataType="vm:PathItem">
+			<Path Fill="{Binding Color}"
+				  Data="{Binding Data}"
+				  Stretch="Uniform" />
+		</DataTemplate>
+	</Styles.Resources>
+
+	<Style Selector="local|ThemedWeatherIcon">
+		<Setter Property="Height" Value="56" />
+		<Setter Property="Width" Value="56" />
+		<Setter Property="CloudColor" Value="{DynamicResource WeatherCloudColor}"/>
+		<Setter Property="SunColor" Value="{DynamicResource WeatherSunColor}"/>
+		<Setter Property="MoonColor" Value="{DynamicResource WeatherMoonColor}"/>
+		<Setter Property="RainColor" Value="{DynamicResource WeatherRainColor}"/>
+		<Setter Property="HailColor" Value="{DynamicResource WeatherHailColor}"/>
+		<Setter Property="SnowColor" Value="{DynamicResource WeatherSnowColor}"/>
+		<Setter Property="FogColor" Value="{DynamicResource WeatherFogColor}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+						<Viewbox Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+							<ItemsControl Items="{TemplateBinding PathItems}"
+										  ItemTemplate="{DynamicResource PathItemTemplate}">
+								<ItemsControl.ItemsPanel>
+									<ItemsPanelTemplate>
+										<Grid/>
+									</ItemsPanelTemplate>
+								</ItemsControl.ItemsPanel>
+							</ItemsControl>
+						</Viewbox>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</Styles>

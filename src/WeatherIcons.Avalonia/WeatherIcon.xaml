@@ -1,0 +1,55 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:WeatherIcons.Avalonia">
+
+	<Design.PreviewWith>
+		<Border Padding="20" Width="280">
+			<StackPanel>
+				<WrapPanel>
+
+					<local:WeatherIcon Background="#373737"								   								   
+									   Key="DayCloudyWindy"/>
+
+					<local:WeatherIcon Background="#373737"								   
+									   Foreground="LightBlue"							 								   
+									   Key="DayStormShowers"/>
+
+					<local:WeatherIcon Background="#373737"								   
+									   Foreground="Red"								   
+									   Primary="White"								  
+									   Secondary="Orange"														   								   
+									   Key="NightAltCloudyWindy"/>
+				</WrapPanel>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<Style Selector="local|WeatherIcon">
+		<Setter Property="Height" Value="56" />
+		<Setter Property="Width" Value="56" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+						<Viewbox Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+							<Grid>
+								<Path Fill="{TemplateBinding Primary}"
+									  Data="{Binding Data1, RelativeSource={RelativeSource TemplatedParent}}"
+									  Stretch="Uniform" />
+								<Path Fill="{TemplateBinding Secondary}"
+									  Data="{Binding Data2, RelativeSource={RelativeSource TemplatedParent}}"
+									  Stretch="Uniform" />
+								<Path Fill="{TemplateBinding Tertiary}"
+									  Data="{Binding Data3, RelativeSource={RelativeSource TemplatedParent}}"
+									  Stretch="Uniform" />
+							</Grid>
+						</Viewbox>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</Styles>

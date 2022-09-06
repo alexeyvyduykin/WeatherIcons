@@ -1,0 +1,16 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:WeatherIconsAvaloniaSample"
+             x:Class="WeatherIconsAvaloniaSample.App">
+
+	<Application.DataTemplates>
+		<local:ViewLocator/>
+	</Application.DataTemplates>
+
+	<Application.Styles>
+		<SimpleTheme Mode="Dark"/>
+
+		<StyleInclude Source="avares://WeatherIcons.Avalonia/App.xaml"/>
+	</Application.Styles>
+
+</Application>
