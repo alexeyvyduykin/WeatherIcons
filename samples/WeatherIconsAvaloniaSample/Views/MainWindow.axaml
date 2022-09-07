@@ -15,14 +15,14 @@
 
 	<Window.Styles>
 		<Style Selector="wi|WeatherIcon.t1">
-	
+
 			<Setter Property="Width" Value="50"></Setter>
 			<Setter Property="Height" Value="50"></Setter>
 			<Setter Property="Primary" Value="Bisque"></Setter>
 			<Setter Property="Secondary" Value="Green"></Setter>
 			<Setter Property="Tertiary" Value="Blue"></Setter>
 		</Style>
-						
+
 		<Style Selector="wi|WeatherIcon.towards-23-deg /template/ Path">
 			<Setter Property="RenderTransform">
 				<Setter.Value>
@@ -39,6 +39,11 @@
 			</Setter>
 		</Style>
 
+		<Style Selector="wi|WeatherIcon.small">
+			<Setter Property="Width" Value="30"/>
+			<Setter Property="Height" Value="30"/>
+		</Style>
+
 		<Style Selector="wi|ThemedWeatherIcon.t3">
 			<Setter Property="CloudColor" Value="Gold"></Setter>
 		</Style>
@@ -47,7 +52,7 @@
 			<Setter Property="CloudColor" Value="DeepPink"></Setter>
 		</Style>
 
-		<Style Selector="wi|WindDirectionIcon">		
+		<Style Selector="wi|WindDirectionIcon">
 			<Setter Property="Primary" Value="Red"/>
 			<Setter Property="Secondary" Value="Orange"/>
 		</Style>
@@ -222,11 +227,11 @@
 				<wi:WeatherIcon Key="SmallCraftAdvisory"/>
 				<wi:WeatherIcon Key="GaleWarning"/>
 				<wi:WeatherIcon Key="StormWarning"/>
-				<wi:WeatherIcon Key="HurricaneWarning"/>			
+				<wi:WeatherIcon Key="HurricaneWarning"/>
 			</WrapPanel>
 		</Expander>
-		
-		<Expander Header="Miscellaneous" IsExpanded="True">
+
+		<Expander Header="Miscellaneous" IsExpanded="False">
 			<WrapPanel>
 				<wi:WeatherIcon Key="Alien"/>
 				<wi:WeatherIcon Key="Celsius"/>
@@ -314,8 +319,8 @@
 					<wi:WeatherIcon Key="MoonAltWaningCrescent3"/>
 					<wi:WeatherIcon Key="MoonAltWaningCrescent4"/>
 					<wi:WeatherIcon Key="MoonAltWaningCrescent5"/>
-					<wi:WeatherIcon Key="MoonAltWaningCrescent6"/>		
-			</WrapPanel>
+					<wi:WeatherIcon Key="MoonAltWaningCrescent6"/>
+				</WrapPanel>
 			</StackPanel>
 		</Expander>
 
@@ -345,7 +350,7 @@
 				<wi:WeatherIcon Key="DirectionDown"/>
 				<wi:WeatherIcon Key="DirectionDownLeft"/>
 				<wi:WeatherIcon Key="DirectionLeft"/>
-				<wi:WeatherIcon Key="DirectionUpLeft"/>			
+				<wi:WeatherIcon Key="DirectionUpLeft"/>
 			</WrapPanel>
 		</Expander>
 
@@ -377,22 +382,34 @@
 			</StackPanel>
 		</Expander>
 
-		<Expander Header="Beaufort Wind Scale" IsExpanded="False">
-			<WrapPanel>
-				<wi:WeatherIcon Key="WindBeaufort0"/>
-				<wi:WeatherIcon Key="WindBeaufort1"/>
-				<wi:WeatherIcon Key="WindBeaufort2"/>
-				<wi:WeatherIcon Key="WindBeaufort3"/>
-				<wi:WeatherIcon Key="WindBeaufort4"/>
-				<wi:WeatherIcon Key="WindBeaufort5"/>
-				<wi:WeatherIcon Key="WindBeaufort6"/>
-				<wi:WeatherIcon Key="WindBeaufort7"/>
-				<wi:WeatherIcon Key="WindBeaufort8"/>
-				<wi:WeatherIcon Key="WindBeaufort9"/>
-				<wi:WeatherIcon Key="WindBeaufort10"/>
-				<wi:WeatherIcon Key="WindBeaufort11"/>
-				<wi:WeatherIcon Key="WindBeaufort12"/>					
-			</WrapPanel>
+		<Expander Header="Beaufort Wind Scale" IsExpanded="True">
+			<StackPanel>
+				<WrapPanel>
+					<wi:WeatherIcon Key="WindBeaufort0"
+									Primary="Orange"
+									Secondary="Red"
+									Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort1" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort2" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort3" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort4" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort5" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort6" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort7" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort8" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort9" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort10" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort11" Classes="small"/>
+					<wi:WeatherIcon Key="WindBeaufort12" Classes="small"/>
+				</WrapPanel>
+				<WrapPanel>
+					<wi:BeaufortWindScaleIcon Speed="3" Primary="Orange" Secondary="Red" />
+					<wi:BeaufortWindScaleIcon Speed="3" Unit="MetrePerSecond"/>
+					<wi:BeaufortWindScaleIcon Speed="3" Unit="Knot"/>
+					<wi:BeaufortWindScaleIcon Speed="3" Unit="KilometresPerHour"/>
+					<wi:BeaufortWindScaleIcon Speed="3" Unit="MilesPerHour"/>
+				</WrapPanel>
+			</StackPanel>
 		</Expander>
 
 	</StackPanel>

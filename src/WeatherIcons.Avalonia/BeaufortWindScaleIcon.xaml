@@ -1,0 +1,60 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:WeatherIcons.Avalonia">
+
+	<Design.PreviewWith>
+		<Border Padding="20" Width="280">
+			<StackPanel>
+				<WrapPanel>
+
+					<local:BeaufortWindScaleIcon Background="#373737"
+												 Scale="2"/>
+
+					<local:BeaufortWindScaleIcon Background="#373737"
+												 Scale="20"
+												 Primary="LightSeaGreen"/>
+
+					<local:BeaufortWindScaleIcon Background="#373737"
+												 Scale="-20"
+												 Primary="Orange"
+												 Secondary="Red"/>
+				</WrapPanel>
+				<WrapPanel>
+					<local:BeaufortWindScaleIcon Speed="4" Unit="Knot"/>
+					<local:BeaufortWindScaleIcon Speed="46" Unit="MilesPerHour"/>
+					<local:BeaufortWindScaleIcon Speed="19" Unit="KilometresPerHour"/>
+					<local:BeaufortWindScaleIcon Speed="28.5" Unit="MetrePerSecond"/>
+				</WrapPanel>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<Style Selector="local|BeaufortWindScaleIcon">
+		<Setter Property="Height" Value="56" />
+		<Setter Property="Width" Value="56" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+							VerticalAlignment="Center">
+						<Viewbox Height="{TemplateBinding Height}"
+								 Width="{TemplateBinding Width}">
+							<Grid>
+								<Path Fill="{TemplateBinding Primary}"
+									  Data="{Binding Data1, RelativeSource={RelativeSource TemplatedParent}}"
+									  Stretch="Uniform"/>
+								<Path Fill="{TemplateBinding Secondary}"
+									  Data="{Binding Data2, RelativeSource={RelativeSource TemplatedParent}}"
+									  Stretch="Uniform">
+								</Path>
+							</Grid>
+						</Viewbox>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</Styles>
