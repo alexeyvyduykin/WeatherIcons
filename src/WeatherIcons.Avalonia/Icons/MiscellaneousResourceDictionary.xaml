@@ -226,11 +226,11 @@
 						<ItemsControl>
 							<Path Data="{DynamicResource HurricaneWarning}" />
 						</ItemsControl>
-						
+
 						<ItemsControl>
 							<Path Data="{DynamicResource SolarEclipse}" />
 						</ItemsControl>
-						
+
 						<ItemsControl>
 							<Path Data="{DynamicResource LunarEclipse}" />
 						</ItemsControl>
@@ -242,58 +242,73 @@
 					</WrapPanel>
 				</Expander>
 
-				<Expander Header="Time" IsExpanded="False">
-					<WrapPanel>
+				<Expander Header="Time" IsExpanded="True">
+					<StackPanel>
+						<WrapPanel>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time1}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time1}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time2}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time2}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time3}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time3}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time4}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time4}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time5}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time5}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time6}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time6}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time7}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time7}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time8}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time8}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time9}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time9}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time10}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time10}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time11}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time11}" />
+							</ItemsControl>
 
-						<ItemsControl>
-							<Path Data="{DynamicResource Time12}" />
-						</ItemsControl>
+							<ItemsControl>
+								<Path Data="{DynamicResource Time12}" />
+							</ItemsControl>
 
-					</WrapPanel>
+						</WrapPanel>
+						<WrapPanel>
+
+							<ItemsControl>
+								<Path Fill="White" Data="{DynamicResource Time_1}" />
+								<Path Fill="White" Data="{DynamicResource Time_2}">
+									<Path.RenderTransform>
+										<RotateTransform Angle="70"/>
+									</Path.RenderTransform>
+								</Path>
+								<Path Fill="White" Data="{DynamicResource Time_3}" />
+							</ItemsControl>
+
+						</WrapPanel>
+					</StackPanel>
 				</Expander>
 
 				<Expander Header="Directional Arrows" IsExpanded="False">
@@ -345,7 +360,7 @@
 					</WrapPanel>
 				</Expander>
 
-				<Expander Header="Beaufort Wind Scale" IsExpanded="True">
+				<Expander Header="Beaufort Wind Scale" IsExpanded="False">
 					<WrapPanel>
 
 						<ItemsControl>
@@ -422,7 +437,7 @@
 
 	<GeometryGroup x:Key="Alien">
 		<StreamGeometry>
-			F1 M30,30z M0,0z 
+			F1 M30,30z M0,0z
 			M8.75,15.54c-1.12-2.4-0.95-4.66,0.52-6.79c1.03-1.48,2.6-2.39,4.73-2.72c0.16-0.04,0.34-0.07,0.54-0.08h0.63
 			c2.91,0.09,5.05,1.38,6.4,3.88c0.64,1.18,0.8,2.48,0.48,3.91c-0.26,1.13-0.68,2.19-1.28,3.17c-1.29,2.01-2.63,3.64-4,4.88
 			c-0.07,0.07-0.17,0.16-0.3,0.26c-0.46,0.35-0.89,0.53-1.28,0.54s-0.83-0.14-1.31-0.45c-0.29-0.17-0.53-0.37-0.74-0.59
@@ -454,7 +469,7 @@
 
 	<GeometryGroup x:Key="Celsius">
 		<StreamGeometry>
-			F1 M30,30z M0,0z 
+			F1 M30,30z M0,0z
 			M9.75,10.98c0-0.5,0.18-0.93,0.53-1.28c0.36-0.36,0.78-0.53,1.28-0.53c0.49,0,0.92,0.18,1.27,0.53
 			c0.35,0.36,0.53,0.78,0.53,1.28c0,0.5-0.18,0.93-0.53,1.28c-0.35,0.36-0.78,0.53-1.27,0.53c-0.5,0-0.93-0.18-1.28-0.53
 			S9.75,11.48,9.75,10.98z M10.63,10.98c0,0.26,0.09,0.48,0.27,0.67c0.19,0.19,0.41,0.28,0.67,0.28c0.26,0,0.48-0.09,0.67-0.28
@@ -626,7 +641,7 @@
 
 	<GeometryGroup x:Key="HorizonAlt_1">
 		<StreamGeometry>
-			F1 M30,30z M0,0z			
+			F1 M30,30z M0,0z
 			M4.11,15.9c0-0.26,0.09-0.47,0.27-0.62c0.14-0.15,0.35-0.23,0.62-0.23h2.08c0.24,0,0.45,0.08,0.6,0.24
 			c0.16,0.16,0.24,0.36,0.24,0.6c0,0.24-0.08,0.44-0.24,0.61c-0.16,0.17-0.36,0.25-0.6,0.25H5c-0.24,0-0.45-0.08-0.63-0.25
 			C4.19,16.34,4.11,16.14,4.11,15.9z M7.08,8.81c0-0.26,0.08-0.45,0.23-0.59c0.17-0.18,0.38-0.27,0.62-0.27
@@ -870,6 +885,18 @@
 			s-0.71-0.39-1.12-0.39c-0.41,0-0.77,0.13-1.08,0.38c-0.31,0.25-0.52,0.58-0.62,0.97h-0.11c-0.41,0-0.77,0.13-1.08,0.39
 			C15.93,4.75,15.78,5.07,15.78,5.43z
 		</StreamGeometry>
+	</GeometryGroup>
+
+	<GeometryGroup x:Key="Time_1">
+		<StreamGeometry>F1 M30,30z M0,0z m 3.74,15.02 c 0,-2.04 0.51,-3.93 1.52,-5.66 1.01,-1.73 2.38,-3.1 4.11,-4.11 1.73,-1.01 3.61,-1.51 5.64,-1.51 1.52,0 2.98,0.3 4.37,0.89 1.39,0.59 2.58,1.4 3.59,2.4 1.01,1 1.81,2.2 2.4,3.6 0.59,1.4 0.89,2.85 0.89,4.39 0,1.52 -0.3,2.98 -0.89,4.37 -0.59,1.39 -1.4,2.59 -2.4,3.59 -1,1 -2.2,1.8 -3.59,2.39 -1.39,0.59 -2.84,0.89 -4.37,0.89 -1.53,0 -3,-0.3 -4.39,-0.89 -1.39,-0.59 -2.59,-1.4 -3.6,-2.4 -1.01,-1 -1.8,-2.2 -2.4,-3.58 -0.6,-1.38 -0.88,-2.84 -0.88,-4.37 z m 2.48,0 c 0,2.37 0.86,4.43 2.59,6.18 1.73,1.73 3.79,2.59 6.2,2.59 1.58,0 3.05,-0.39 4.39,-1.18 1.34,-0.79 2.42,-1.85 3.21,-3.2 0.79,-1.35 1.19,-2.81 1.19,-4.39 0,-1.58 -0.4,-3.05 -1.19,-4.4 C 21.82,9.27 20.75,8.2 19.4,7.41 18.05,6.62 16.59,6.23 15.01,6.23 13.43,6.23 11.96,6.62 10.62,7.41 9.28,8.2 8.2,9.27 7.4,10.62 6.6,11.97 6.22,13.44 6.22,15.02 Z</StreamGeometry>
+	</GeometryGroup>
+
+	<GeometryGroup x:Key="Time_2">
+		<StreamGeometry>F1 M30,30z M0,0z M 14.14,15.02 V 8.36 c 0,-0.2299999 0.08,-0.43 0.24,-0.59 0.16,-0.16 0.36,-0.24 0.59,-0.24 0.23,0 0.43,0.08 0.59,0.24 0.16,0.16 0.24,0.36 0.24,0.59 v 6.66 c 0,0.23 -0.08,0.43 -0.24,0.6 -0.16,0.17 -0.36,0.24 -0.59,0.24 -0.23,0 -0.43,-0.07 -0.59,-0.24 -0.16,-0.17 -0.24,-0.36 -0.24,-0.6 z</StreamGeometry>
+	</GeometryGroup>
+
+	<GeometryGroup x:Key="Time_3">
+		<StreamGeometry>F1 M30,30z M0,0z m 14.14,15.02 v -4.403966 c 0,-0.23 0.08,-0.43 0.24,-0.59 C 14.54,9.8660339 14.74,9.786 14.97,9.786 c 0.23,0 0.43,0.08 0.59,0.24 0.16,0.16 0.24,0.36 0.24,0.59 v 4.404 c 0,0.23 -0.08,0.43 -0.24,0.6 -0.16,0.17 -0.36,0.24 -0.59,0.24 -0.23,0 -0.43,-0.07 -0.59,-0.24 -0.16,-0.17 -0.24,-0.36 -0.24,-0.6 z</StreamGeometry>
 	</GeometryGroup>
 
 	<GeometryGroup x:Key="Time1">
@@ -1140,10 +1167,10 @@
 			c0-0.49-0.17-0.91-0.52-1.26s-0.77-0.52-1.27-0.52c-0.49,0-0.91,0.17-1.27,0.51c-0.11,0.12-0.16,0.27-0.16,0.42
 			c0,0.16,0.05,0.3,0.16,0.4c0.11,0.1,0.24,0.15,0.4,0.15c0.15,0,0.29-0.05,0.41-0.16c0.12-0.12,0.27-0.18,0.45-0.18
 			c0.17,0,0.33,0.06,0.46,0.18c0.13,0.12,0.2,0.27,0.2,0.45c0,0.18-0.07,0.34-0.2,0.47c-0.13,0.13-0.28,0.2-0.46,0.2H5.6
-			c-0.16,0-0.3,0.06-0.42,0.17C5.07,11.18,5.01,11.32,5.01,11.48z 
+			c-0.16,0-0.3,0.06-0.42,0.17C5.07,11.18,5.01,11.32,5.01,11.48z
 		</StreamGeometry>
 	</GeometryGroup>
-	
+
 	<GeometryGroup x:Key="WindBeaufort0_2">
 		<StreamGeometry>
 			F1 M30,30z M0,0z
@@ -1345,7 +1372,7 @@
 			l-0.41,1.89h3.49C20.39,18,19.22,19.96,18.85,21.9z
 		</StreamGeometry>
 	</GeometryGroup>
-	
+
 	<GeometryGroup x:Key="WindBeaufort8_1">
 		<StreamGeometry>
 			F1 M30,30z M0,0z
@@ -1463,7 +1490,7 @@
 			l1.65-7.99h-2.45L21.3,21.9z
 		</StreamGeometry>
 	</GeometryGroup>
-	
+
 	<GeometryGroup x:Key="WindBeaufort12_1">
 		<StreamGeometry>
 			F1 M30,30z M0,0z
@@ -1492,7 +1519,7 @@
 			C19.68,21.03,19.57,21.44,19.51,21.9z
 		</StreamGeometry>
 	</GeometryGroup>
-	
+
 	<GeometryGroup x:Key="Smog">
 		<StreamGeometry>
 			F1 M30,30z M0,0z

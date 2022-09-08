@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using Avalonia.Controls.Primitives;
-using Avalonia.Controls.Shapes;
 using Avalonia.Media;
 using WeatherIcons.Avalonia.Enums;
 using WeatherIcons.Avalonia.ViewModels;
@@ -60,7 +59,7 @@ namespace WeatherIcons.Avalonia
         }
 
         public static readonly StyledProperty<IBrush?> PrimaryProperty =
-            AvaloniaProperty.Register<Shape, IBrush?>(nameof(Primary), defaultValue: null);
+            AvaloniaProperty.Register<WeatherIcon, IBrush?>(nameof(Primary), defaultValue: null);
 
         public IBrush? Primary
         {
@@ -69,7 +68,7 @@ namespace WeatherIcons.Avalonia
         }
 
         public static readonly StyledProperty<IBrush?> SecondaryProperty =
-            AvaloniaProperty.Register<Shape, IBrush?>(nameof(Secondary), defaultValue: null);
+            AvaloniaProperty.Register<WeatherIcon, IBrush?>(nameof(Secondary), defaultValue: null);
 
         public IBrush? Secondary
         {
@@ -78,7 +77,7 @@ namespace WeatherIcons.Avalonia
         }
 
         public static readonly StyledProperty<IBrush?> TertiaryProperty =
-            AvaloniaProperty.Register<Shape, IBrush?>(nameof(Tertiary), defaultValue: null);
+            AvaloniaProperty.Register<WeatherIcon, IBrush?>(nameof(Tertiary), defaultValue: null);
 
         public IBrush? Tertiary
         {
@@ -87,14 +86,14 @@ namespace WeatherIcons.Avalonia
         }
 
         public static readonly StyledProperty<IBrush?> QuaternaryProperty =
-            AvaloniaProperty.Register<Shape, IBrush?>(nameof(Quaternary), defaultValue: null);
+            AvaloniaProperty.Register<WeatherIcon, IBrush?>(nameof(Quaternary), defaultValue: null);
 
         public IBrush? Quaternary
         {
             get { return GetValue(QuaternaryProperty); }
             set { SetValue(QuaternaryProperty, value); }
         }
-        
+
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);

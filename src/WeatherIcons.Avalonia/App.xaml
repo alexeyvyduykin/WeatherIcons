@@ -11,10 +11,11 @@
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>
-	
+
 	<StyleInclude Source="avares://WeatherIcons.Avalonia/WeatherIcon.xaml" />
 	<StyleInclude Source="avares://WeatherIcons.Avalonia/WindDirectionIcon.xaml" />
 	<StyleInclude Source="avares://WeatherIcons.Avalonia/BeaufortWindScaleIcon.xaml" />
+	<StyleInclude Source="avares://WeatherIcons.Avalonia/TimeIcon.xaml" />
 	<StyleInclude Source="avares://WeatherIcons.Avalonia/ThemedWeatherIcon.xaml" />
 
 </Styles>

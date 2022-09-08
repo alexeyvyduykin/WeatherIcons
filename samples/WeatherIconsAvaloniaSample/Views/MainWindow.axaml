@@ -98,7 +98,7 @@
 			</Style>
 		</StackPanel.Styles>
 
-		<Expander Header="Themed Weather Icon" IsExpanded="True">
+		<Expander Header="Themed Weather Icon" IsExpanded="False">
 			<WrapPanel>
 				<wi:ThemedWeatherIcon Key="DayCloudyWindy"/>
 				<wi:ThemedWeatherIcon Key="NightAltCloudyGusts"/>
@@ -106,7 +106,7 @@
 				<wi:ThemedWeatherIcon Key="DayStormShowers"/>
 			</WrapPanel>
 		</Expander>
-		
+
 		<Expander Header="Daytime" IsExpanded="False">
 			<WrapPanel>
 				<wi:WeatherIcon Key="DaySunny"/>
@@ -333,21 +333,32 @@
 			</StackPanel>
 		</Expander>
 
-		<Expander Header="Time" IsExpanded="False">
-			<WrapPanel>
-				<wi:WeatherIcon Key="Time1"/>
-				<wi:WeatherIcon Key="Time2"/>
-				<wi:WeatherIcon Key="Time3"/>
-				<wi:WeatherIcon Key="Time4"/>
-				<wi:WeatherIcon Key="Time5"/>
-				<wi:WeatherIcon Key="Time6"/>
-				<wi:WeatherIcon Key="Time7"/>
-				<wi:WeatherIcon Key="Time8"/>
-				<wi:WeatherIcon Key="Time9"/>
-				<wi:WeatherIcon Key="Time10"/>
-				<wi:WeatherIcon Key="Time11"/>
-				<wi:WeatherIcon Key="Time12"/>
-			</WrapPanel>
+		<Expander Header="Time" IsExpanded="True">
+			<StackPanel>
+				<WrapPanel>
+					<wi:WeatherIcon Key="Time1"/>
+					<wi:WeatherIcon Key="Time2"/>
+					<wi:WeatherIcon Key="Time3"/>
+					<wi:WeatherIcon Key="Time4"/>
+					<wi:WeatherIcon Key="Time5"/>
+					<wi:WeatherIcon Key="Time6"/>
+					<wi:WeatherIcon Key="Time7"/>
+					<wi:WeatherIcon Key="Time8"/>
+					<wi:WeatherIcon Key="Time9"/>
+					<wi:WeatherIcon Key="Time10"/>
+					<wi:WeatherIcon Key="Time11"/>
+					<wi:WeatherIcon Key="Time12"/>
+				</WrapPanel>
+				<WrapPanel>
+					<wi:TimeIcon Primary="Orange"
+								 Secondary="Red"
+								 Tertiary="White"/>
+					<wi:TimeIcon Time="10:13"
+								 Primary="Orange"
+								 Secondary="Red"
+								 Tertiary="White"/>
+				</WrapPanel>
+			</StackPanel>
 		</Expander>
 
 		<Expander Header="Directional Arrows" IsExpanded="False">
