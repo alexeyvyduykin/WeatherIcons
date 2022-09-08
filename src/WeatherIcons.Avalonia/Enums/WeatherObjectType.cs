@@ -9,5 +9,7 @@
         Hail,
         Snow,
         Fog,
+        Wind,
+        Lightning,
     }
 }

@@ -75,6 +75,25 @@ namespace WeatherIcons.Avalonia
             get => (IBrush)GetValue(FogColorProperty)!;
             set => SetValue(FogColorProperty, value);
         }
+
+        public static readonly AvaloniaProperty<IBrush> WindColorProperty =
+            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(WindColor), defaultValue: Brushes.WhiteSmoke);
+
+        public IBrush WindColor
+        {
+            get => (IBrush)GetValue(WindColorProperty)!;
+            set => SetValue(WindColorProperty, value);
+        }
+
+        public static readonly AvaloniaProperty<IBrush> LightningColorProperty =
+            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(LightningColor), defaultValue: Brushes.Red);
+
+        public IBrush LightningColor
+        {
+            get => (IBrush)GetValue(LightningColorProperty)!;
+            set => SetValue(LightningColorProperty, value);
+        }
+        
         public static readonly AvaloniaProperty<IList<PathItem>> PathItemsProperty =
             AvaloniaProperty.RegisterDirect<ThemedWeatherIcon, IList<PathItem>>(nameof(PathItems), icon => icon.PathItems);
 
@@ -85,7 +104,7 @@ namespace WeatherIcons.Avalonia
         }
 
         public static readonly AvaloniaProperty<ThemedWeatherKey> KeyProperty =
-            AvaloniaProperty.Register<ThemedWeatherIcon, ThemedWeatherKey>(nameof(Key), defaultValue: ThemedWeatherKey.WeatherDayPartlyCloudy);
+            AvaloniaProperty.Register<ThemedWeatherIcon, ThemedWeatherKey>(nameof(Key), defaultValue: ThemedWeatherKey.Cloud);
 
         public ThemedWeatherKey Key
         {
@@ -123,6 +142,8 @@ namespace WeatherIcons.Avalonia
                 WeatherObjectType.Hail => HailColor,
                 WeatherObjectType.Snow => SnowColor,
                 WeatherObjectType.Fog => FogColor,
+                WeatherObjectType.Wind => WindColor,
+                WeatherObjectType.Lightning => LightningColor,
                 _ => throw new Exception(),
             };
         }

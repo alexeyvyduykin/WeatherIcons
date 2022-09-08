@@ -98,7 +98,16 @@
 			</Style>
 		</StackPanel.Styles>
 
-		<Expander Header="Daytime" IsExpanded="True">
+		<Expander Header="Themed Weather Icon" IsExpanded="True">
+			<WrapPanel>
+				<wi:ThemedWeatherIcon Key="DayCloudyWindy"/>
+				<wi:ThemedWeatherIcon Key="NightAltCloudyGusts"/>
+				<wi:ThemedWeatherIcon Key="NightCloudyGusts"/>
+				<wi:ThemedWeatherIcon Key="DayStormShowers"/>
+			</WrapPanel>
+		</Expander>
+		
+		<Expander Header="Daytime" IsExpanded="False">
 			<WrapPanel>
 				<wi:WeatherIcon Key="DaySunny"/>
 				<wi:WeatherIcon Key="DayCloudy" Primary="White" Secondary="Yellow"/>
@@ -382,7 +391,7 @@
 			</StackPanel>
 		</Expander>
 
-		<Expander Header="Beaufort Wind Scale" IsExpanded="True">
+		<Expander Header="Beaufort Wind Scale" IsExpanded="False">
 			<StackPanel>
 				<WrapPanel>
 					<wi:WeatherIcon Key="WindBeaufort0"

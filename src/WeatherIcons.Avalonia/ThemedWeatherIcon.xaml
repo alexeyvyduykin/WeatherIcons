@@ -6,16 +6,32 @@
 	<Design.PreviewWith>
 		<Border Padding="20" Width="280">
 			<StackPanel>
+				<StackPanel.Styles>
+					<Style Selector="local|ThemedWeatherIcon.simple">
+						<Setter Property="CloudColor" Value="White"/>
+						<Setter Property="SunColor" Value="White"/>
+						<Setter Property="MoonColor" Value="White"/>
+						<Setter Property="RainColor" Value="White"/>
+						<Setter Property="HailColor" Value="White"/>
+						<Setter Property="SnowColor" Value="White"/>
+						<Setter Property="FogColor" Value="White"/>
+						<Setter Property="WindColor" Value="White"/>
+						<Setter Property="LightningColor" Value="White"/>
+					</Style>
+				</StackPanel.Styles>
+				
 				<WrapPanel>
 
-					<local:ThemedWeatherIcon Background="#373737"	
-											  Key="WeatherDayRain"/>
+					<local:ThemedWeatherIcon Key="Hot"/>
 
-					<local:ThemedWeatherIcon Background="#373737"
-											  Key="WeatherDrizzle"/>
+					<local:ThemedWeatherIcon Key="DaySleetStorm"/>
 
-					<local:ThemedWeatherIcon Background="#373737"
-											  Key="WeatherNightSnow"/>
+					<local:ThemedWeatherIcon Key="NightAltRainWind"/>
+
+					<local:ThemedWeatherIcon Key="RainMix"/>
+
+					<local:ThemedWeatherIcon Key="DaySleetStorm" Classes="simple"/>
+					
 				</WrapPanel>
 			</StackPanel>
 		</Border>
@@ -32,13 +48,15 @@
 	<Style Selector="local|ThemedWeatherIcon">
 		<Setter Property="Height" Value="56" />
 		<Setter Property="Width" Value="56" />
-		<Setter Property="CloudColor" Value="{DynamicResource WeatherCloudColor}"/>
-		<Setter Property="SunColor" Value="{DynamicResource WeatherSunColor}"/>
-		<Setter Property="MoonColor" Value="{DynamicResource WeatherMoonColor}"/>
-		<Setter Property="RainColor" Value="{DynamicResource WeatherRainColor}"/>
-		<Setter Property="HailColor" Value="{DynamicResource WeatherHailColor}"/>
-		<Setter Property="SnowColor" Value="{DynamicResource WeatherSnowColor}"/>
-		<Setter Property="FogColor" Value="{DynamicResource WeatherFogColor}"/>
+		<Setter Property="CloudColor" Value="{DynamicResource ThemedCloudColor}"/>
+		<Setter Property="SunColor" Value="{DynamicResource ThemedSunColor}"/>
+		<Setter Property="MoonColor" Value="{DynamicResource ThemedMoonColor}"/>
+		<Setter Property="RainColor" Value="{DynamicResource ThemedRainColor}"/>
+		<Setter Property="HailColor" Value="{DynamicResource ThemedHailColor}"/>
+		<Setter Property="SnowColor" Value="{DynamicResource ThemedSnowColor}"/>
+		<Setter Property="FogColor" Value="{DynamicResource ThemedFogColor}"/>
+		<Setter Property="WindColor" Value="{DynamicResource ThemedWindColor}"/>
+		<Setter Property="LightningColor" Value="{DynamicResource ThemedLightningColor}"/>
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate>

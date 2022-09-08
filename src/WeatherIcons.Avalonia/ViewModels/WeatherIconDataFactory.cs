@@ -90,7 +90,9 @@ namespace WeatherIcons.Avalonia.ViewModels
 
             var style = CreateStyle("avares://WeatherIcons.Avalonia/App.xaml");
 
-            style.TryGetResource($"{key}Keys", out var value);
+            var strKey = key.ToString().Replace("Alt", "");
+  
+            style.TryGetResource($"{strKey}Keys", out var value);
 
             if (value == null || value is not string str)
             {
