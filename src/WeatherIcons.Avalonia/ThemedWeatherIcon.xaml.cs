@@ -50,7 +50,7 @@ namespace WeatherIcons.Avalonia
         }
 
         public static readonly AvaloniaProperty<IBrush> HailColorProperty =
-            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(HailColor), defaultValue: Brushes.LightSeaGreen);
+            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(HailColor), defaultValue: Brushes.Aqua);
 
         public IBrush HailColor
         {
@@ -68,7 +68,7 @@ namespace WeatherIcons.Avalonia
         }
 
         public static readonly AvaloniaProperty<IBrush> FogColorProperty =
-            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(FogColor), defaultValue: Brushes.LightBlue);
+            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(FogColor), defaultValue: Brushes.Orange);
 
         public IBrush FogColor
         {
@@ -77,7 +77,7 @@ namespace WeatherIcons.Avalonia
         }
 
         public static readonly AvaloniaProperty<IBrush> WindColorProperty =
-            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(WindColor), defaultValue: Brushes.WhiteSmoke);
+            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(WindColor), defaultValue: Brushes.LightGreen);
 
         public IBrush WindColor
         {
@@ -86,7 +86,7 @@ namespace WeatherIcons.Avalonia
         }
 
         public static readonly AvaloniaProperty<IBrush> LightningColorProperty =
-            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(LightningColor), defaultValue: Brushes.Red);
+            AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(LightningColor), defaultValue: Brushes.OrangeRed);
 
         public IBrush LightningColor
         {

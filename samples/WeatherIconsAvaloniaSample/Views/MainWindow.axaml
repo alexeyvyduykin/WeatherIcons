@@ -44,10 +44,6 @@
 			<Setter Property="Height" Value="30"/>
 		</Style>
 
-		<Style Selector="wi|ThemedWeatherIcon.t3">
-			<Setter Property="CloudColor" Value="Gold"></Setter>
-		</Style>
-
 		<Style Selector="wi|ThemedWeatherIcon.t4">
 			<Setter Property="CloudColor" Value="DeepPink"></Setter>
 		</Style>
@@ -57,130 +53,110 @@
 			<Setter Property="Secondary" Value="Orange"/>
 		</Style>
 
+		<Style Selector="wi|TimeIcon">
+			<Setter Property="Primary" Value="Orange"/>
+			<Setter Property="Secondary" Value="Red"/>
+			<Setter Property="Tertiary" Value="White"/>
+		</Style>
 	</Window.Styles>
 
 	<StackPanel>
 
-		<StackPanel.Styles>
-			<Style Selector="Border">
-				<Setter Property="Background" Value="#373737"></Setter>
-			</Style>
-			<Style Selector="Viewbox">
-				<Setter Property="Width" Value="56"></Setter>
-				<Setter Property="Height" Value="56"></Setter>
-			</Style>
-			<Style Selector="Path">
-				<Setter Property="Stretch" Value="Uniform"></Setter>
-				<Setter Property="Fill" Value="White"></Setter>
-			</Style>
-			<Style Selector="ItemsControl">
-				<Setter Property="ItemsPanel">
-					<Setter.Value>
-						<ItemsPanelTemplate>
-							<Grid/>
-						</ItemsPanelTemplate>
-					</Setter.Value>
-				</Setter>
-				<Setter Property="Template">
-					<ControlTemplate>
-						<Border>
-							<Viewbox>
-								<Grid>
-									<ItemsPresenter Name="PART_ItemsPresenter"
-													Items="{TemplateBinding Items}"
-													ItemsPanel="{TemplateBinding ItemsPanel}"
-													ItemTemplate="{TemplateBinding ItemTemplate}"/>
-								</Grid>
-							</Viewbox>
-						</Border>
-					</ControlTemplate>
-				</Setter>
-			</Style>
-		</StackPanel.Styles>
-
-		<Expander Header="Themed Weather Icon" IsExpanded="False">
+		<Expander Header="Themed Weather Icon" IsExpanded="True">
 			<WrapPanel>
-				<wi:ThemedWeatherIcon Key="DayCloudyWindy"/>
+				<wi:ThemedWeatherIcon Key="DayFog"/>
 				<wi:ThemedWeatherIcon Key="NightAltCloudyGusts"/>
 				<wi:ThemedWeatherIcon Key="NightCloudyGusts"/>
-				<wi:ThemedWeatherIcon Key="DayStormShowers"/>
+				<wi:ThemedWeatherIcon Key="DayStormShowers" Classes="t4"/>
 			</WrapPanel>
 		</Expander>
 
 		<Expander Header="Daytime" IsExpanded="False">
-			<WrapPanel>
-				<wi:WeatherIcon Key="DaySunny"/>
-				<wi:WeatherIcon Key="DayCloudy" Primary="White" Secondary="Yellow"/>
-				<wi:WeatherIcon Key="DayCloudyGusts"/>
-				<wi:WeatherIcon Key="DayCloudyWindy"/>
-				<wi:WeatherIcon Key="DayFog"/>
-				<wi:WeatherIcon Key="DayHail"/>
-				<wi:WeatherIcon Key="DayHaze"/>
-				<wi:WeatherIcon Key="DayLightning"/>
-				<wi:WeatherIcon Key="DayRain"/>
-				<wi:WeatherIcon Key="DayRainMix"/>
-				<wi:WeatherIcon Key="DayRainWind"/>
-				<wi:WeatherIcon Key="DayShowers"/>
-				<wi:WeatherIcon Key="DaySleet"/>
-				<wi:WeatherIcon Key="DaySleetStorm"/>
-				<wi:WeatherIcon Key="DaySnow"/>
-				<wi:WeatherIcon Key="DaySnowThunderstorm"/>
-				<wi:WeatherIcon Key="DaySnowWind"/>
-				<wi:WeatherIcon Key="DaySprinkle"/>
-				<wi:WeatherIcon Key="DayStormShowers"/>
-				<wi:WeatherIcon Key="DaySunnyOvercast"/>
-				<wi:WeatherIcon Key="DayThunderstorm"/>
-				<wi:WeatherIcon Key="DayWindy"/>
-				<wi:WeatherIcon Key="DayCloudyHigh"/>
-				<wi:WeatherIcon Key="DayLightWind"/>
-			</WrapPanel>
+			<StackPanel>
+				<StackPanel.Styles>
+					<Style Selector="wi|WeatherIcon">
+						<Setter Property="Secondary" Value="Yellow"/>
+					</Style>
+				</StackPanel.Styles>
+				<WrapPanel>
+					<wi:WeatherIcon Primary="Yellow" Key="DaySunny"/>
+					<wi:WeatherIcon Key="DayCloudy" Primary="White" Secondary="Yellow"/>
+					<wi:WeatherIcon Tertiary="LightGreen" Key="DayCloudyGusts"/>
+					<wi:WeatherIcon Tertiary="LightGreen" Key="DayCloudyWindy"/>
+					<wi:WeatherIcon Tertiary="Orange" Key="DayFog"/>
+					<wi:WeatherIcon Tertiary="Aqua" Key="DayHail"/>
+					<wi:WeatherIcon Primary="Yellow" Secondary="Orange" Key="DayHaze"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Key="DayLightning"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="DayRain"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="DayRainMix"/>
+					<wi:WeatherIcon Tertiary="Aqua" Key="DayRainWind"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="DayShowers"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="DaySleet"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightSeaGreen" Key="DaySleetStorm"/>
+					<wi:WeatherIcon Tertiary="LightBlue" Key="DaySnow"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightBlue" Key="DaySnowThunderstorm"/>
+					<wi:WeatherIcon Tertiary="LightBlue" Key="DaySnowWind"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="DaySprinkle"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightSeaGreen" Key="DayStormShowers"/>
+					<wi:WeatherIcon Key="DaySunnyOvercast"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightSeaGreen" Key="DayThunderstorm"/>
+					<wi:WeatherIcon Primary="Yellow" Secondary="LightGreen" Key="DayWindy"/>
+					<wi:WeatherIcon Key="DayCloudyHigh"/>
+					<wi:WeatherIcon Primary="Yellow" Secondary="LightGreen" Key="DayLightWind"/>
+				</WrapPanel>
+			</StackPanel>
 		</Expander>
 
 		<Expander Header="Nighttime" IsExpanded="False">
 			<StackPanel>
+				<StackPanel.Styles>
+					<Style Selector="wi|WeatherIcon">
+						<Setter Property="Secondary" Value="Violet"/>
+					</Style>
+				</StackPanel.Styles>
 				<WrapPanel>
-					<wi:WeatherIcon Key="NightClear"/>
-					<wi:WeatherIcon Key="NightFog"/>
-				</WrapPanel>
-				<WrapPanel>
+					<wi:WeatherIcon Primary="Violet" Key="NightClear"/>
 					<wi:WeatherIcon Key="NightAltCloudy"/>
-					<wi:WeatherIcon Key="NightAltCloudyGusts"/>
-					<wi:WeatherIcon Key="NightAltCloudyWindy"/>
-					<wi:WeatherIcon Key="NightAltHail"/>
-					<wi:WeatherIcon Key="NightAltLightning"/>
-					<wi:WeatherIcon Key="NightAltRain"/>
-					<wi:WeatherIcon Key="NightAltRainMix"/>
-					<wi:WeatherIcon Key="NightAltRainWind"/>
-					<wi:WeatherIcon Key="NightAltShowers"/>
-					<wi:WeatherIcon Key="NightAltSleet"/>
-					<wi:WeatherIcon Key="NightAltSleetStorm"/>
-					<wi:WeatherIcon Key="NightAltSnow"/>
-					<wi:WeatherIcon Key="NightAltSnowThunderstorm"/>
-					<wi:WeatherIcon Key="NightAltSnowWind"/>
-					<wi:WeatherIcon Key="NightAltSprinkle"/>
-					<wi:WeatherIcon Key="NightAltStormShowers"/>
-					<wi:WeatherIcon Key="NightAltThunderstorm"/>
+					<wi:WeatherIcon Tertiary="LightGreen" Key="NightAltCloudyGusts"/>
+					<wi:WeatherIcon Tertiary="LightGreen" Key="NightAltCloudyWindy"/>
+					<wi:WeatherIcon Tertiary="Orange" Key="NightFog"/>
+					<wi:WeatherIcon Tertiary="Aqua" Key="NightAltHail"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Key="NightAltLightning"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightAltRain"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightAltRainMix"/>
+					<wi:WeatherIcon Tertiary="Aqua" Key="NightAltRainWind"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightAltShowers"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightAltSleet"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightSeaGreen" Key="NightAltSleetStorm"/>
+					<wi:WeatherIcon Tertiary="LightBlue" Key="NightAltSnow"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightBlue" Key="NightAltSnowThunderstorm"/>
+					<wi:WeatherIcon Tertiary="LightBlue" Key="NightAltSnowWind"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightAltSprinkle"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightSeaGreen" Key="NightAltStormShowers"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightSeaGreen" Key="NightAltThunderstorm"/>
 					<wi:WeatherIcon Key="NightAltCloudyHigh"/>
 					<wi:WeatherIcon Key="NightAltPartlyCloudy"/>
 				</WrapPanel>
 				<WrapPanel>
+					<wi:WeatherIcon Primary="Violet" Key="NightClear"/>
 					<wi:WeatherIcon Key="NightCloudy"/>
-					<wi:WeatherIcon Key="NightCloudyGusts"/>
-					<wi:WeatherIcon Key="NightCloudyWindy"/>
-					<wi:WeatherIcon Key="NightHail"/>
-					<wi:WeatherIcon Key="NightLightning"/>
-					<wi:WeatherIcon Key="NightRain"/>
-					<wi:WeatherIcon Key="NightRainMix"/>
-					<wi:WeatherIcon Key="NightRainWind"/>
-					<wi:WeatherIcon Key="NightShowers"/>
-					<wi:WeatherIcon Key="NightSleet"/>
-					<wi:WeatherIcon Key="NightSleetStorm"/>
-					<wi:WeatherIcon Key="NightSnow"/>
-					<wi:WeatherIcon Key="NightSnowThunderstorm"/>
-					<wi:WeatherIcon Key="NightSnowWind"/>
-					<wi:WeatherIcon Key="NightSprinkle"/>
-					<wi:WeatherIcon Key="NightStormShowers"/>
-					<wi:WeatherIcon Key="NightThunderstorm"/>
+					<wi:WeatherIcon Tertiary="LightGreen" Key="NightCloudyGusts"/>
+					<wi:WeatherIcon Tertiary="LightGreen" Key="NightCloudyWindy"/>
+					<wi:WeatherIcon Tertiary="Orange" Key="NightFog"/>
+					<wi:WeatherIcon Tertiary="Aqua" Key="NightHail"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Key="NightLightning"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightRain"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightRainMix"/>
+					<wi:WeatherIcon Tertiary="Aqua" Key="NightRainWind"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightShowers"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightSleet"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightSeaGreen" Key="NightSleetStorm"/>
+					<wi:WeatherIcon Tertiary="LightBlue" Key="NightSnow"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightBlue" Key="NightSnowThunderstorm"/>
+					<wi:WeatherIcon Tertiary="LightBlue" Key="NightSnowWind"/>
+					<wi:WeatherIcon Tertiary="LightSeaGreen" Key="NightSprinkle"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightSeaGreen" Key="NightStormShowers"/>
+					<wi:WeatherIcon Tertiary="OrangeRed" Quaternary="LightSeaGreen" Key="NightThunderstorm"/>
 					<wi:WeatherIcon Key="NightCloudyHigh"/>
 					<wi:WeatherIcon Key="NightPartlyCloudy"/>
 				</WrapPanel>
@@ -190,62 +166,30 @@
 		<Expander Header="Neutral" IsExpanded="False">
 			<WrapPanel>
 				<wi:WeatherIcon Key="Cloud"/>
-				<wi:WeatherIcon Key="Cloudy"/>
-				<wi:WeatherIcon Key="CloudyGusts"/>
-				<wi:WeatherIcon Key="CloudyWindy"/>
-				<wi:WeatherIcon Key="Fog"/>
-				<wi:WeatherIcon Key="Hail"/>
-				<wi:WeatherIcon Key="Rain"/>
-				<wi:WeatherIcon Key="RainMix"/>
-				<wi:WeatherIcon Key="RainWind"/>
-				<wi:WeatherIcon Key="Showers"/>
-				<wi:WeatherIcon Key="Sleet"/>
-				<wi:WeatherIcon Key="Snow"/>
-				<wi:WeatherIcon Key="Sprinkle"/>
-				<wi:WeatherIcon Key="StormShowers"/>
-				<wi:WeatherIcon Key="Thunderstorm"/>
-				<wi:WeatherIcon Key="SnowWind"/>
-				<wi:WeatherIcon Key="Snow"/>
-			</WrapPanel>
-		</Expander>
-
-		<Expander Header="Others" IsExpanded="False">
-			<WrapPanel>
-				<wi:WeatherIcon Key="SolarEclipse"/>
-				<wi:WeatherIcon Key="Hot"/>
-				<wi:WeatherIcon Key="LunarEclipse"/>
-				<wi:WeatherIcon Key="Stars"/>
-				<wi:WeatherIcon Key="Lightning"/>
-				<wi:WeatherIcon Key="Raindrops"/>
-				<wi:WeatherIcon Key="Raindrop"/>
-				<wi:WeatherIcon Key="SnowflakeCold"/>
-				<wi:WeatherIcon Key="Smog"/>
-				<wi:WeatherIcon Key="Smoke"/>
-				<wi:WeatherIcon Key="Dust"/>
-				<wi:WeatherIcon Key="Windy"/>
-				<wi:WeatherIcon Key="StrongWind"/>
-				<wi:WeatherIcon Key="Sandstorm"/>
-				<wi:WeatherIcon Key="Earthquake"/>
-				<wi:WeatherIcon Key="Fire"/>
-				<wi:WeatherIcon Key="Flood"/>
-				<wi:WeatherIcon Key="Meteor"/>
-				<wi:WeatherIcon Key="Tsunami"/>
-				<wi:WeatherIcon Key="Volcano"/>
-				<wi:WeatherIcon Key="Hurricane"/>
-				<wi:WeatherIcon Key="Tornado"/>
-				<wi:WeatherIcon Key="SmallCraftAdvisory"/>
-				<wi:WeatherIcon Key="GaleWarning"/>
-				<wi:WeatherIcon Key="StormWarning"/>
-				<wi:WeatherIcon Key="HurricaneWarning"/>
+				<wi:WeatherIcon Secondary="Silver" Key="Cloudy"/>
+				<wi:WeatherIcon Secondary="LightGreen" Key="CloudyGusts"/>
+				<wi:WeatherIcon Secondary="LightGreen" Key="CloudyWindy"/>
+				<wi:WeatherIcon Secondary="Orange" Key="Fog"/>
+				<wi:WeatherIcon Secondary="Aqua" Key="Hail"/>
+				<wi:WeatherIcon Secondary="LightSeaGreen" Key="Rain"/>
+				<wi:WeatherIcon Secondary="LightSeaGreen" Key="RainMix"/>
+				<wi:WeatherIcon Secondary="Aqua" Key="RainWind"/>
+				<wi:WeatherIcon Secondary="LightSeaGreen" Key="Showers"/>
+				<wi:WeatherIcon Secondary="LightSeaGreen" Key="Sleet"/>
+				<wi:WeatherIcon Secondary="LightBlue" Key="Snow"/>
+				<wi:WeatherIcon Secondary="LightSeaGreen" Key="Sprinkle"/>
+				<wi:WeatherIcon Secondary="OrangeRed" Tertiary="LightSeaGreen" Key="StormShowers"/>
+				<wi:WeatherIcon Secondary="OrangeRed" Tertiary="LightSeaGreen" Key="Thunderstorm"/>
+				<wi:WeatherIcon Secondary="LightBlue" Key="SnowWind"/>
 			</WrapPanel>
 		</Expander>
 
 		<Expander Header="Miscellaneous" IsExpanded="False">
 			<WrapPanel>
-				<wi:WeatherIcon Key="Alien"/>
-				<wi:WeatherIcon Key="Celsius"/>
-				<wi:WeatherIcon Key="Fahrenheit"/>
-				<wi:WeatherIcon Key="Degrees"/>
+				<wi:WeatherIcon Primary="Green" Key="Alien"/>
+				<wi:WeatherIcon Primary="Aqua" Key="Celsius"/>
+				<wi:WeatherIcon Primary="Aqua" Key="Fahrenheit"/>
+				<wi:WeatherIcon Primary="Aqua" Key="Degrees"/>
 				<wi:WeatherIcon Key="Thermometer" Primary="Red" Secondary="White"/>
 				<wi:WeatherIcon Key="Thermometer" Primary="Transparent" Secondary="White"/>
 				<wi:WeatherIcon Key="Thermometer" Primary="Red" Secondary="Transparent"/>
@@ -258,21 +202,47 @@
 				<wi:WeatherIcon Key="Sunset" Primary="Yellow" Secondary="Orange"/>
 				<wi:WeatherIcon Key="Moonrise" Primary="Violet" Secondary="LightSeaGreen"/>
 				<wi:WeatherIcon Key="Moonset" Primary="Violet" Secondary="LightSeaGreen"/>
-				<wi:WeatherIcon Key="Refresh"/>
-				<wi:WeatherIcon Key="RefreshAlt"/>
-				<wi:WeatherIcon Key="Umbrella"/>
-				<wi:WeatherIcon Key="Barometer"/>
-				<wi:WeatherIcon Key="Humidity"/>
-				<wi:WeatherIcon Key="Na"/>
-				<wi:WeatherIcon Key="Train"/>
+				<wi:WeatherIcon Primary="Orange" Key="Refresh"/>
+				<wi:WeatherIcon Primary="Orange" Key="RefreshAlt"/>
+				<wi:WeatherIcon Primary="Green" Secondary="Brown" Key="Umbrella"/>
+				<wi:WeatherIcon Primary="Brown" Secondary="White" Tertiary="Orange" Key="Barometer"/>
+				<wi:WeatherIcon Primary="Aqua" Key="Humidity"/>
+				<wi:WeatherIcon Primary="White" Secondary="Red" Key="Na"/>
+				<wi:WeatherIcon Primary="Orange" Secondary="Green" Tertiary="Silver" Key="Train"/>
+				<wi:WeatherIcon Primary="Yellow" Key="SolarEclipse"/>
+				<wi:WeatherIcon Primary="Yellow" Secondary="Orange" Key="Hot"/>
+				<wi:WeatherIcon Primary="Violet" Key="LunarEclipse"/>
+				<wi:WeatherIcon Primary="Pink" Key="Stars"/>
+				<wi:WeatherIcon Primary="LightPink" Key="Lightning"/>
+				<wi:WeatherIcon Primary="Aqua" Key="Raindrops"/>
+				<wi:WeatherIcon Primary="Aqua" Key="Raindrop"/>
+				<wi:WeatherIcon Primary="LightBlue" Key="SnowflakeCold"/>
+				<wi:WeatherIcon Primary="Silver" Key="Smog"/>
+				<wi:WeatherIcon Primary="Silver" Key="Smoke"/>
+				<wi:WeatherIcon Primary="Orange" Key="Dust"/>
+				<wi:WeatherIcon Primary="LightGreen" Key="Windy"/>
+				<wi:WeatherIcon Primary="LightGreen" Key="StrongWind"/>
+				<wi:WeatherIcon Primary="Orange" Secondary="Yellow" Key="Sandstorm"/>
+				<wi:WeatherIcon Primary="Red" Key="Earthquake"/>
+				<wi:WeatherIcon Primary="Orange" Secondary="Green" Key="Fire"/>
+				<wi:WeatherIcon Primary="Aqua" Secondary="White" Key="Flood"/>
+				<wi:WeatherIcon Primary="OrangeRed" Key="Meteor"/>
+				<wi:WeatherIcon Primary="Aqua" Secondary="Brown" Tertiary="Green" Key="Tsunami"/>
+				<wi:WeatherIcon Primary="Brown" Secondary="White" Key="Volcano"/>
+				<wi:WeatherIcon Primary="Aqua" Key="Hurricane"/>
+				<wi:WeatherIcon Primary="Aqua" Key="Tornado"/>
+				<wi:WeatherIcon Primary="Red" Secondary="White" Key="SmallCraftAdvisory"/>
+				<wi:WeatherIcon Primary="Red" Secondary="White" Key="GaleWarning"/>
+				<wi:WeatherIcon Primary="Red" Secondary="White" Key="StormWarning"/>
+				<wi:WeatherIcon Primary="Red" Secondary="White" Key="HurricaneWarning"/>
 			</WrapPanel>
 		</Expander>
 
 		<Expander Header="Moon Phases" IsExpanded="False">
 			<StackPanel>
 				<WrapPanel>
-					<wi:WeatherIcon Key="MoonNew"/>
-					<wi:WeatherIcon Key="MoonWaxingCrescent1"/>
+					<wi:WeatherIcon Primary="Yellow" Key="MoonNew"/>
+					<wi:WeatherIcon Primary="Yellow" Key="MoonWaxingCrescent1"/>
 					<wi:WeatherIcon Key="MoonWaxingCrescent2"/>
 					<wi:WeatherIcon Key="MoonWaxingCrescent3"/>
 					<wi:WeatherIcon Key="MoonWaxingCrescent4"/>
@@ -301,8 +271,8 @@
 					<wi:WeatherIcon Key="MoonWaningCrescent6"/>
 				</WrapPanel>
 				<WrapPanel>
-					<wi:WeatherIcon Key="MoonAltNew"/>
-					<wi:WeatherIcon Key="MoonAltWaxingCrescent1"/>
+					<wi:WeatherIcon Primary="Violet" Key="MoonAltNew"/>
+					<wi:WeatherIcon Primary="Violet" Key="MoonAltWaxingCrescent1"/>
 					<wi:WeatherIcon Key="MoonAltWaxingCrescent2"/>
 					<wi:WeatherIcon Key="MoonAltWaxingCrescent3"/>
 					<wi:WeatherIcon Key="MoonAltWaxingCrescent4"/>
@@ -333,10 +303,12 @@
 			</StackPanel>
 		</Expander>
 
-		<Expander Header="Time" IsExpanded="True">
+		<Expander Header="Time" IsExpanded="False">
 			<StackPanel>
 				<WrapPanel>
-					<wi:WeatherIcon Key="Time1"/>
+					<wi:WeatherIcon Primary="Orange"
+									Secondary="Aqua"
+									Key="Time1"/>
 					<wi:WeatherIcon Key="Time2"/>
 					<wi:WeatherIcon Key="Time3"/>
 					<wi:WeatherIcon Key="Time4"/>
@@ -350,13 +322,8 @@
 					<wi:WeatherIcon Key="Time12"/>
 				</WrapPanel>
 				<WrapPanel>
-					<wi:TimeIcon Primary="Orange"
-								 Secondary="Red"
-								 Tertiary="White"/>
-					<wi:TimeIcon Time="10:13"
-								 Primary="Orange"
-								 Secondary="Red"
-								 Tertiary="White"/>
+					<wi:TimeIcon />
+					<wi:TimeIcon Time="10:13"/>
 				</WrapPanel>
 			</StackPanel>
 		</Expander>
@@ -364,8 +331,8 @@
 		<Expander Header="Directional Arrows" IsExpanded="False">
 			<WrapPanel>
 				<wi:WeatherIcon Key="DirectionUp"/>
-				<wi:WeatherIcon Key="DirectionUpRight"/>
-				<wi:WeatherIcon Key="DirectionRight"/>
+				<wi:WeatherIcon Foreground="Red" Key="DirectionUpRight"/>
+				<wi:WeatherIcon Primary="Green" Key="DirectionRight"/>
 				<wi:WeatherIcon Key="DirectionDownRight"/>
 				<wi:WeatherIcon Key="DirectionDown"/>
 				<wi:WeatherIcon Key="DirectionDownLeft"/>

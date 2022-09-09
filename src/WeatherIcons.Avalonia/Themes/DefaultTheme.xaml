@@ -5,10 +5,10 @@
 	<SolidColorBrush x:Key="ThemedSunColor" Color="Yellow"/>
 	<SolidColorBrush x:Key="ThemedMoonColor" Color="Violet"/>
 	<SolidColorBrush x:Key="ThemedRainColor" Color="LightSeaGreen"/>
-	<SolidColorBrush x:Key="ThemedHailColor" Color="LightSeaGreen"/>
+	<SolidColorBrush x:Key="ThemedHailColor" Color="Aqua"/>
 	<SolidColorBrush x:Key="ThemedSnowColor" Color="LightBlue"/>
-	<SolidColorBrush x:Key="ThemedFogColor" Color="LightBlue"/>
-	<SolidColorBrush x:Key="ThemedWindColor" Color="WhiteSmoke"/>
-	<SolidColorBrush x:Key="ThemedLightningColor" Color="Red"/>
+	<SolidColorBrush x:Key="ThemedFogColor" Color="Orange"/>
+	<SolidColorBrush x:Key="ThemedWindColor" Color="LightGreen"/>
+	<SolidColorBrush x:Key="ThemedLightningColor" Color="OrangeRed"/>
 
 </ResourceDictionary>
