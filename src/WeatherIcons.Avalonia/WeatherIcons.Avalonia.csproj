@@ -20,6 +20,7 @@
 		<AvaloniaResource Include="Icons\WeatherResourceDictionary.xaml" />
 		<AvaloniaResource Include="Icons\MiscellaneousResourceDictionary.xaml" />
 		<AvaloniaResource Include="Icons\MoonPhasesResourceDictionary.xaml" />
+		<AvaloniaResource Include="Icons\TimeResourceDictionary.xaml" />
 		<AvaloniaResource Include="Themes\DefaultTheme.xaml" />
 	</ItemGroup>
 

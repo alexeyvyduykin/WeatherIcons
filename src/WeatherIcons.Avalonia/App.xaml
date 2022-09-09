@@ -8,6 +8,7 @@
 				<ResourceInclude Source="/Icons/WeatherResourceDictionary.xaml"/>
 				<ResourceInclude Source="/Icons/MiscellaneousResourceDictionary.xaml"/>
 				<ResourceInclude Source="/Icons/MoonPhasesResourceDictionary.xaml"/>
+				<ResourceInclude Source="/Icons/TimeResourceDictionary.xaml"/>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>
