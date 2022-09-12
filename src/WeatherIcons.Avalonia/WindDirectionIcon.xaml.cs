@@ -7,6 +7,8 @@ namespace WeatherIcons.Avalonia
 {
     public class WindDirectionIcon : TemplatedControl
     {
+        private ITransform? _angleTransform;
+
         public static readonly StyledProperty<IBrush?> PrimaryProperty =
             AvaloniaProperty.Register<WindDirectionIcon, IBrush?>(nameof(Primary), defaultValue: null);
 
@@ -53,6 +55,15 @@ namespace WeatherIcons.Avalonia
             set => SetValue(CardinalDirectionProperty, value);
         }
 
+        public static readonly AvaloniaProperty<ITransform?> AngleTransformProperty =
+            AvaloniaProperty.RegisterDirect<WindDirectionIcon, ITransform?>(nameof(AngleTransform), icon => icon.AngleTransform);
+
+        public ITransform? AngleTransform
+        {
+            get => _angleTransform;
+            private set => SetAndRaise(AngleTransformProperty, ref _angleTransform, value);
+        }
+
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
@@ -71,6 +82,8 @@ namespace WeatherIcons.Avalonia
                     Angle -= 360.0;
                 }
             }
+
+            AngleTransform = new RotateTransform(Angle);
 
             Primary ??= Foreground;
             Secondary ??= Primary;

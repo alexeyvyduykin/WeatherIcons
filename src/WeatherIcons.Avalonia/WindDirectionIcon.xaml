@@ -10,13 +10,13 @@
 					<local:WindDirectionIcon Background="#373737"
 											 Angle="50"/>
 
-					<local:WindDirectionIcon Background="#373737"	
-											 Angle="140"									   
+					<local:WindDirectionIcon Background="#373737"
+											 Angle="140"
 											 Foreground="LightSeaGreen"/>
 
 					<local:WindDirectionIcon Background="#373737"
-											 Angle="190"									   																	   									   
-											 Primary="Red"								  									   
+											 Angle="190"
+											 Primary="Red"
 											 Secondary="Orange"/>
 				</WrapPanel>
 			</StackPanel>
@@ -25,7 +25,7 @@
 
 	<Style Selector="local|WindDirectionIcon">
 		<Setter Property="Height" Value="56" />
-		<Setter Property="Width" Value="56" />	
+		<Setter Property="Width" Value="56" />
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate>
@@ -33,20 +33,16 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
 							VerticalAlignment="Center">
-						<Viewbox Height="{TemplateBinding Height}" 
+						<Viewbox Height="{TemplateBinding Height}"
 								 Width="{TemplateBinding Width}">
 							<Grid>
 								<Path Fill="{TemplateBinding Secondary}"
 									  Data="{DynamicResource WindDeg_2}"
-									  Stretch="Uniform"/>								
-								<Path x:Name="PART_Path"
-									  Fill="{TemplateBinding Primary}"
+									  Stretch="Uniform"/>
+								<Path Fill="{TemplateBinding Primary}"
 									  Data="{DynamicResource WindDeg_1}"
-									  Stretch="Uniform">
-									<Path.RenderTransform>
-										<RotateTransform Angle="{Binding Angle, RelativeSource={RelativeSource TemplatedParent}}"/>
-									</Path.RenderTransform>
-								</Path>
+									  Stretch="Uniform"
+									  RenderTransform="{TemplateBinding AngleTransform}"/>
 							</Grid>
 						</Viewbox>
 					</Border>
@@ -54,5 +50,4 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-
 </Styles>

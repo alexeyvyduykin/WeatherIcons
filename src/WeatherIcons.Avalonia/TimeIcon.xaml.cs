@@ -8,8 +8,8 @@ namespace WeatherIcons.Avalonia
 {
     public class TimeIcon : TemplatedControl
     {
-        private double _hourAngle;
-        private double _minuteAngle;
+        private ITransform? _hourAngle;
+        private ITransform? _minuteAngle;
 
         public static readonly StyledProperty<IBrush?> PrimaryProperty =
             AvaloniaProperty.Register<TimeIcon, IBrush?>(nameof(Primary), defaultValue: null);
@@ -47,19 +47,19 @@ namespace WeatherIcons.Avalonia
             set => SetValue(TimeProperty, value);
         }
 
-        public static readonly AvaloniaProperty<double> HourAngleProperty =
-            AvaloniaProperty.RegisterDirect<TimeIcon, double>(nameof(HourAngle), icon => icon.HourAngle);
+        public static readonly AvaloniaProperty<ITransform?> HourAngleProperty =
+            AvaloniaProperty.RegisterDirect<TimeIcon, ITransform?>(nameof(HourAngle), icon => icon.HourAngle);
 
-        public double HourAngle
+        public ITransform? HourAngle
         {
             get => _hourAngle;
             private set => SetAndRaise(HourAngleProperty, ref _hourAngle, value);
         }
 
-        public static readonly AvaloniaProperty<double> MinuteAngleProperty =
-            AvaloniaProperty.RegisterDirect<TimeIcon, double>(nameof(MinuteAngle), icon => icon.MinuteAngle);
+        public static readonly AvaloniaProperty<ITransform?> MinuteAngleProperty =
+            AvaloniaProperty.RegisterDirect<TimeIcon, ITransform?>(nameof(MinuteAngle), icon => icon.MinuteAngle);
 
-        public double MinuteAngle
+        public ITransform? MinuteAngle
         {
             get => _minuteAngle;
             private set => SetAndRaise(MinuteAngleProperty, ref _minuteAngle, value);
@@ -94,8 +94,11 @@ namespace WeatherIcons.Avalonia
             var hours = Time.Hours % 12;
             var minutes = Time.Minutes % 60;
 
-            MinuteAngle = 360.0 * minutes / 60.0;
-            HourAngle = 360.0 * hours / 12 + 360.0 * minutes / (60.0 * 12);
+            var minuteAngle = 360.0 * minutes / 60.0;
+            var hourAngle = 360.0 * hours / 12 + 360.0 * minutes / (60.0 * 12);
+
+            MinuteAngle = new RotateTransform(minuteAngle);
+            HourAngle = new RotateTransform(hourAngle);
 
             Primary ??= Foreground;
             Secondary ??= Primary;

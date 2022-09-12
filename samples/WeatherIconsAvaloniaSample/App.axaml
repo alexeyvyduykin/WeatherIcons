@@ -8,7 +8,7 @@
 	</Application.DataTemplates>
 
 	<Application.Styles>
-		<SimpleTheme Mode="Dark"/>
+		<FluentTheme Mode="Dark"/>
 
 		<StyleInclude Source="avares://WeatherIcons.Avalonia/App.xaml"/>
 	</Application.Styles>

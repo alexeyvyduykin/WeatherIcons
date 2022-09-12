@@ -45,18 +45,12 @@
 									  Stretch="Uniform"/>
 								<Path Fill="{TemplateBinding Tertiary}"
 									  Data="{DynamicResource Time_2}"
-									  Stretch="Uniform">
-									<Path.RenderTransform>
-										<RotateTransform Angle="{Binding MinuteAngle, RelativeSource={RelativeSource TemplatedParent}}"/>
-									</Path.RenderTransform>
-								</Path>
+									  Stretch="Uniform"
+									  RenderTransform="{TemplateBinding MinuteAngle}"/>
 								<Path Fill="{TemplateBinding Secondary}"
 									  Data="{DynamicResource Time_3}"
-									  Stretch="Uniform">
-									<Path.RenderTransform>
-										<RotateTransform Angle="{Binding HourAngle, RelativeSource={RelativeSource TemplatedParent}}"/>
-									</Path.RenderTransform>
-								</Path>
+									  Stretch="Uniform"
+									  RenderTransform="{TemplateBinding HourAngle}"/>
 							</Grid>
 						</Viewbox>
 					</Border>
