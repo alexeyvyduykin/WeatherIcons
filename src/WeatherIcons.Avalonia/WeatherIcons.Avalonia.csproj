@@ -4,7 +4,6 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<LangVersion>9</LangVersion>
 		<Nullable>enable</Nullable>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Title>WeatherIcons.Avalonia</Title>
 		<RepositoryUrl>https://github.com/alexeyvyduykin/WeatherIcons</RepositoryUrl>
 	</PropertyGroup>
