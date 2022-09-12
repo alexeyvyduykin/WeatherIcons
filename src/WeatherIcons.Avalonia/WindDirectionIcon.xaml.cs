@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
+using System;
 using WeatherIcons.Avalonia.Enums;
 
 namespace WeatherIcons.Avalonia
@@ -8,6 +9,13 @@ namespace WeatherIcons.Avalonia
     public class WindDirectionIcon : TemplatedControl
     {
         private ITransform? _angleTransform;
+
+        public WindDirectionIcon()
+        {
+            AngleProperty.Changed.Subscribe(_ => ChangedAngle());
+            CardinalDirectionProperty.Changed.Subscribe(_ => ChangedCardinalDirection());
+            DirectionProperty.Changed.Subscribe(_ => ChangedAngle());
+        }
 
         public static readonly StyledProperty<IBrush?> PrimaryProperty =
             AvaloniaProperty.Register<WindDirectionIcon, IBrush?>(nameof(Primary), defaultValue: null);
@@ -64,26 +72,37 @@ namespace WeatherIcons.Avalonia
             private set => SetAndRaise(AngleTransformProperty, ref _angleTransform, value);
         }
 
-        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+        private void ChangedCardinalDirection()
         {
-            base.OnApplyTemplate(e);
-
             if (CardinalDirection != null)
             {
                 Angle = (int)CardinalDirection;
             }
+        }
+
+        private void ChangedAngle()
+        {
+            var angle = Angle;
 
             if (Direction == WindDirection.From)
             {
-                Angle += 180.0;
+                angle += 180.0;
 
-                if (Angle >= 360.0)
+                if (angle >= 360.0)
                 {
-                    Angle -= 360.0;
+                    angle -= 360.0;
                 }
             }
 
-            AngleTransform = new RotateTransform(Angle);
+            AngleTransform = new RotateTransform(angle);
+        }
+
+        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+        {
+            base.OnApplyTemplate(e);
+
+            ChangedCardinalDirection();
+            ChangedAngle();
 
             Primary ??= Foreground;
             Secondary ??= Primary;

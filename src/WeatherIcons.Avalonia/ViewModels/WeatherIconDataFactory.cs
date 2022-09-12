@@ -91,7 +91,7 @@ namespace WeatherIcons.Avalonia.ViewModels
             var style = CreateStyle("avares://WeatherIcons.Avalonia/App.xaml");
 
             var strKey = key.ToString().Replace("Alt", "");
-  
+
             style.TryGetResource($"{strKey}Keys", out var value);
 
             if (value == null || value is not string str)
@@ -103,11 +103,15 @@ namespace WeatherIcons.Avalonia.ViewModels
 
             var list = new List<(WeatherObjectType, Geometry?)>();
 
-            for (int i = 0; i < types.Length; i++)
+            var count = types.Length;
+
+            for (int i = 0; i < count; i++)
             {
                 if (Enum.TryParse<WeatherObjectType>(types[i].Trim().FirstCharToUpper(), out var type) == true)
                 {
-                    style.TryGetResource($"{key}_{i + 1}", out var valueRes);
+                    var ext = (count == 1) ? "" : $"_{i + 1}";
+
+                    style.TryGetResource($"{key}{ext}", out var valueRes);
 
                     list.Add((type, (Geometry?)valueRes));
                 }

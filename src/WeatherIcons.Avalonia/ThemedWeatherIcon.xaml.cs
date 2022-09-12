@@ -13,6 +13,11 @@ namespace WeatherIcons.Avalonia
     {
         private IList<PathItem> _pathItems = new List<PathItem>();
 
+        public ThemedWeatherIcon()
+        {
+            KeyProperty.Changed.Subscribe(_ => UpdateData());
+        }
+
         public static readonly AvaloniaProperty<IBrush> CloudColorProperty =
             AvaloniaProperty.Register<ThemedWeatherIcon, IBrush>(nameof(CloudColor), defaultValue: Brushes.White);
 
@@ -93,7 +98,7 @@ namespace WeatherIcons.Avalonia
             get => (IBrush)GetValue(LightningColorProperty)!;
             set => SetValue(LightningColorProperty, value);
         }
-        
+
         public static readonly AvaloniaProperty<IList<PathItem>> PathItemsProperty =
             AvaloniaProperty.RegisterDirect<ThemedWeatherIcon, IList<PathItem>>(nameof(PathItems), icon => icon.PathItems);
 

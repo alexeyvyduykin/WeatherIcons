@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
+using System;
 using WeatherIcons.Avalonia.Enums;
 using WeatherIcons.Avalonia.ViewModels;
 
@@ -10,6 +11,13 @@ namespace WeatherIcons.Avalonia
     {
         private Geometry? _data1;
         private Geometry? _data2;
+
+        public BeaufortWindScaleIcon()
+        {
+            ScaleProperty.Changed.Subscribe(_ => ChangedScale());
+            SpeedProperty.Changed.Subscribe(_ => ChangedSpeed());
+            UnitProperty.Changed.Subscribe(_ => ChangedSpeed());
+        }
 
         public static readonly AvaloniaProperty<Geometry?> DataProperty1 =
             AvaloniaProperty.RegisterDirect<BeaufortWindScaleIcon, Geometry?>(nameof(Data1), icon => icon.Data1);
@@ -80,17 +88,26 @@ namespace WeatherIcons.Avalonia
             UpdateData();
         }
 
-        private void UpdateData()
+        private void ChangedScale()
+        {
+            var list = WeatherIconDataFactory.GetBeaufortScale(Scale);
+
+            Data1 = list[0];
+            Data2 = list[1];
+        }
+
+        private void ChangedSpeed()
         {
             if (Speed != null)
             {
                 Scale = WeatherIconDataFactory.GetBeaufortScale((double)Speed, Unit);
             }
+        }
 
-            var list = WeatherIconDataFactory.GetBeaufortScale(Scale);
-
-            Data1 = list[0];
-            Data2 = list[1];
+        private void UpdateData()
+        {
+            ChangedSpeed();
+            ChangedScale();
 
             Primary ??= Foreground;
             Secondary ??= Primary;

@@ -11,6 +11,11 @@ namespace WeatherIcons.Avalonia
         private ITransform? _hourAngle;
         private ITransform? _minuteAngle;
 
+        public TimeIcon()
+        {
+            TimeProperty.Changed.Subscribe(_ => ChangedTime());
+        }
+
         public static readonly StyledProperty<IBrush?> PrimaryProperty =
             AvaloniaProperty.Register<TimeIcon, IBrush?>(nameof(Primary), defaultValue: null);
 
@@ -89,7 +94,7 @@ namespace WeatherIcons.Avalonia
             UpdateData();
         }
 
-        private void UpdateData()
+        private void ChangedTime()
         {
             var hours = Time.Hours % 12;
             var minutes = Time.Minutes % 60;
@@ -99,6 +104,11 @@ namespace WeatherIcons.Avalonia
 
             MinuteAngle = new RotateTransform(minuteAngle);
             HourAngle = new RotateTransform(hourAngle);
+        }
+
+        private void UpdateData()
+        {
+            ChangedTime();
 
             Primary ??= Foreground;
             Secondary ??= Primary;
